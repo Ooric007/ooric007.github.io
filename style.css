@@ -191,10 +191,11 @@ nav ul li:hover::after>a:not(.active) {
     font-weight: bolder;
 }
 
-/* Scroll down arrow */
 body {
     background: #21242C;
 }
+
+/* Scroll down arrow */
 
 .wrapper {
     width: 100%;
@@ -204,7 +205,7 @@ body {
 
 .arrow {
     width: 38px;
-    height: 128px;
+    height: 184px;
     margin: auto;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -230,6 +231,8 @@ body {
     width: 24px;
     height: 4px;
     background: white;
+    /* Glow on scroll arrow */
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.7);
 }
 
 .arrow ul li:nth-child(1) {
