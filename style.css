@@ -728,7 +728,7 @@ i {
 
 /* About Me */
 
-.about {
+.about, .deloitte {
   padding: 20px;
   background-color: #f3f3f2;
 }
@@ -828,6 +828,13 @@ h3 {
   text-decoration: none;
   color: #000; /* Set the color for the link */
 }
+
+.link-tile a:hover {
+  color: #fbc02d;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
 
 @media (max-width: 768px) {
   #greetingId {
@@ -945,5 +952,47 @@ h3 {
   }
   .column:nth-child(3) .column-header {
     display: none;
+  }
+}
+
+/* About Deloitte */
+
+.about-deloitte p {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.clients-section {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
+
+.client-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem; 
+}
+
+.client-row img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 2rem; 
+}
+
+@media (max-width: 768px) {
+  .client-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .client-row img {
+    max-width: 80%;
+    margin-bottom: 10px;
   }
 }
