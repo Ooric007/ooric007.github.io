@@ -7,6 +7,9 @@ function resizeIframe(iframe) {
             // Adjust the height for other iframes on mobile
             iframe.style.height = "584px"; // Set the desired height for mobile iframes other than the second one
           }
+    } else if (iframe === document.querySelector("#iframe-container iframe:first-child")) {
+      // Adjust the height for the first iframe on desktop
+      iframe.style.height = "604px"; // Set the desired height for the first iframe
     } else if (iframe === document.querySelector("#iframe-container iframe:last-child")) {
       // Adjust the height for the last iframe on desktop
       iframe.style.height = "74px"; // Set the desired height for the last iframe

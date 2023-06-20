@@ -580,7 +580,8 @@ a:hover {
   text-align: center;
   min-height: 100px;
   padding: 0 2rem;
-  padding-bottom: 20px;
+  padding-top: 48px;
+  padding-bottom: 48px;
   background: #363748;
 }
 
@@ -679,7 +680,7 @@ footer {
   font-weight: 300;
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 2.2rem;
   background: #0c344e;
   border-top: 4px solid #bfc8ea;
   min-height: 2rem;
@@ -691,16 +692,36 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .by-break::before {
+  footer {
+    text-align: center;
+  }
+
+  #foot .by-break::before {
     content: "\A";
     white-space: pre;
   }
 
-  .fa {
+  #foot .by-break {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+  }
+
+  #foot .by-break a {
+    margin-left: 0.5rem;
+  }
+
+  #foot .fa {
     font-size: 24px;
     margin-top: 8px;
   }
+
+  #foot span.by-break {
+    margin-left: 24px;
+  }
 }
+
 
 #fot {
   margin-left: -0.1rem;
@@ -734,7 +755,7 @@ i {
 
 /* About Me */
 
-.about, .work {
+.about, .work, .accolades {
   padding: 20px;
   background-color: #f3f3f2;
 }
@@ -845,6 +866,10 @@ h3 {
 @media (max-width: 768px) {
   #greetingId {
     margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 48px; /* Adjust the font size as needed */
   }
 
   .links .paragraphs {
@@ -1003,6 +1028,15 @@ h3 {
   }
 }
 
+/* About Amazon */
+.client-row img#kindleLogo {
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 2rem; 
+  width: 300px;
+  height: 300px;
+}
+
 /* About Microsoft */
 
 #ms-paragraph {
@@ -1029,4 +1063,19 @@ h3 {
 .microsoft-list li:before {
   content: "•";
   margin-right: 0.5em; 
+}
+
+#accolades {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .microsoft-list li {
+    align-items: flex-start; /* Align the list items to start from the top */
+  }
 }
