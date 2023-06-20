@@ -78,7 +78,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4.2rem;
+  font-size: 48px;
   color: #2196f3;
 }
 
@@ -452,8 +452,8 @@ a:hover {
   width: 100%;
   height: 100vh;
   position: relative;
-  /*background: linear-gradient(90deg, #878780 0%, #3f5efb 100%);*/
-  background-image: url(https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/AE0qprnW58U2k2WP/view-islands4-A856pX7yBRH5Oo8B.jpeg);
+  background: linear-gradient(90deg, #878780 0%, #3f5efb 100%);
+  /*background-image: url(https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/AE0qprnW58U2k2WP/view-islands4-A856pX7yBRH5Oo8B.jpeg);*/
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -474,7 +474,7 @@ a:hover {
   list-style: disc;
 }
 
-/* overlay effect */
+/* overlay effect to make background image darker to see text */
 .overlay {
   content: "";
   position: absolute;
@@ -482,7 +482,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(54, 56, 63, 0.5), rgba(54, 56, 63, 0.5));
+  background: linear-gradient(rgba(54, 56, 63, 0.3), rgba(54, 56, 63, 0.3));
   z-index: 1;
 }
 
@@ -507,7 +507,7 @@ a:hover {
   letter-spacing: 3px;
 }
 
-@media (max-width: 28.75em) {
+@media (max-width: 768px) {
   .projects-section-header {
     font-size: 4rem;
   }
@@ -520,6 +520,7 @@ a:hover {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  margin-top: 6rem;
   margin-bottom: 6rem;
 }
 
@@ -614,7 +615,7 @@ a:hover {
 }
 
 .contact-section-header > h2 {
-  font-size: 6rem;
+  font-size: 48px;
 }
 
 #contact-intro-phrase {
@@ -669,7 +670,7 @@ a:hover {
   }
 
   .contact-section-header > h2 {
-    font-size: 4rem;
+    font-size: 48px;
   }
 }
 
@@ -711,9 +712,14 @@ footer {
   color: #fbc02d;
 }
 
-iframe {
-  margin: 0;
-  padding: 0;
+#iframe-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#footerSection {
+  border: none;
+  margin-bottom: 0;
 }
 
 #profile-link {
@@ -728,7 +734,7 @@ i {
 
 /* About Me */
 
-.about, .deloitte {
+.about, .work {
   padding: 20px;
   background-color: #f3f3f2;
 }
@@ -957,7 +963,7 @@ h3 {
 
 /* About Deloitte */
 
-.about-deloitte p {
+.about-work p {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -995,4 +1001,32 @@ h3 {
     max-width: 80%;
     margin-bottom: 10px;
   }
+}
+
+/* About Microsoft */
+
+#ms-paragraph {
+  flex: 1;
+  padding-right: 20px;
+  text-align: center;
+  color: #4a4a43;
+}
+
+.microsoft-list {
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 10px;
+  padding-bottom: 40px;
+  list-style-position: inside; 
+  text-align: left; 
+}
+
+.microsoft-list li {
+  display: flex;
+  align-items: center;
+}
+
+.microsoft-list li:before {
+  content: "•";
+  margin-right: 0.5em; 
 }

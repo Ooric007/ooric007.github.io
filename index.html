@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eric Waldbaum – Quality Engineer Lead's Portfolio Website</title>
   <meta content="Eric Waldbaum – Quality Engineer Lead's Portfolio Website" property="og:title"
@@ -20,8 +19,8 @@
     content="Visit Eric Waldbaum's website, ooric.com, to learn about his quality engineer lead expertise, view his impressive portfolio, and discover some of his interests."
     data-el-id="twitter:description" />
   <meta name="keywords" content="Eric Waldbaum, Ooric, quality engineer lead" data-el-id="keywords" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="shortcut icon" type="image/x-icon"
     href="https://secure.gravatar.com/blavatar/58ead3272526ea0a614798f8e9c6169b808b02fca1f21c96cd3472625db6c0a4?s=32"
     sizes="16x16" />
@@ -62,7 +61,6 @@
     </nav>
   </header>
 
-  <main>
     <!-- First Section: Welcome -->
     <section id="welcome-section">
       <div class="overlay"></div>
@@ -124,47 +122,17 @@
       </div>
     </section>
 
-
-    <!-- Third Section: Contact -->
-
-    <section id="contact" class="contact-section">
-      <div class="contact-section-header">
-        <h2 id="contact-intro-phrase">Let's work together...</h2>
-        <p id="contact-intro-subphrase">If you have any questions, feedback, or a job opportunity please contact me.</p>
-      </div>
-
-      <a href="pages/about.html" class="contact contact-tile" id="contactTile">
-        <img class="project-image"
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=612,h=544,fit=crop,trim=54.11764705882353;0;825.8823529411765;0/AE0qprnW58U2k2WP/_mg_2037-Y4LE4vwGMPUonDj7.jpg"
-          alt="Eric" />
-        <p class="project-title">
-          About Eric
-        </p>
-      </a>
-    </section>
-    <!-- END CONTACT SECTION -->
-  </main>
-  <!-- START FOOTER SECTION -->
-  <footer>
-    <p id="foot">
-      &copy; 2023, Made with ❤ <span class="by-break">
-        by <a id="fot" href="https://www.linkedin.com/in/eric-waldbaum-59752612/" target="_blank">Eric
-          Waldbaum</a></span>
-
-      <!-- <a id="fot" href="https://www.linkedin.com/in/madansinha/" target="_blank">A Madan Sinha template</a>-->
-
-      <a id="profile-link" href="https://www.linkedin.com/in/eric-waldbaum-59752612/" target="_blank"
-        class="btn contact-details"><i class="fa fa-linkedin-square fa-lg"></i>
-      </a>
-      <a id="profile-link" href="https://github.com/ooric007" target="_blank" class="btn contact-details"><i
-          class="fa fa-github fa-lg"></i>
-      </a>
-    </p>
-  </footer>
-  <!-- END FOOTER SECTION -->
-
-  <script src="js/offsetHeaderHeight.js"></script>
+    <div id="iframe-container">
+      <!-- START CONTACT SECTION -->
+      <iframe src="sections/contactSection.html" frameborder="0" onload="resizeIframe(this)"></iframe>
+      <!-- END CONTACT SECTION -->
+      <!-- START FOOTER SECTION -->
+      <iframe src="sections/footerSection.html" id="footerSection" ="0" onload="resizeIframe(this)"></iframe>
+      <!-- END FOOTER SECTION -->
+    </div>
+    
+  <script src="js/adjustIFrameHeight.js"></script>
   <script src="js/breakline.js"></script>
+  <script src="js/offsetHeaderHeight.js"></script>
 </body>
-
 </html>

@@ -30,7 +30,7 @@
       href="https://latest-user-app.zyro.com/about"
       data-el-id="canonical"
     />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -192,7 +192,7 @@
                   <p>Bachelor's degree in Management Information Systems</p>
                 </div>
                 <div class="text-row">
-                  <p>1994-2004</p>
+                  <p>1999-2004</p>
                 </div>
               </div>
             
@@ -303,36 +303,17 @@
        </div> <!-- End of column-container -->
       </section>
 
-    <!-- START FOOTER SECTION -->
-    <footer>
-      <p id="foot">
-        &copy; 2023, Made with ❤ by
-        <a
-          id="fot"
-          href="https://www.linkedin.com/in/eric-waldbaum-59752612/"
-          target="_blank"
-          >Eric Waldbaum</a
-        >
-
-        <!-- <a id="fot" href="https://www.linkedin.com/in/madansinha/" target="_blank">A Madan Sinha template</a>-->
-        <a
-          id="profile-link"
-          href="https://www.linkedin.com/in/eric-waldbaum-59752612/"
-          target="_blank"
-          class="btn contact-details"
-          ><i class="fa fa-linkedin-square fa-lg"></i>
-        </a>
-        <a
-          id="profile-link"
-          href="https://github.com/ooric007"
-          target="_blank"
-          class="btn contact-details"
-          ><i class="fa fa-github fa-lg"></i>
-        </a>
-      </p>
-    </footer>
-    <!-- END FOOTER SECTION -->
-
+      <div id="iframe-container">
+        <!-- START CONTACT SECTION -->
+        <iframe src="../sections/contactSection.html" frameborder="0" onload="resizeIframe(this)"></iframe>
+        <!-- END CONTACT SECTION -->
+        <!-- START FOOTER SECTION -->
+        <iframe src="../sections/footerSection.html" id="footerSection" ="0" onload="resizeIframe(this)"></iframe>
+        <!-- END FOOTER SECTION -->
+      </div>
+      
+    <script src="../js/adjustIFrameHeight.js"></script>
+    <script src="../js/breakline.js"></script>
     <script src="../js/setTilesToMaxHeight.js"></script>
   </body>
 </html>
