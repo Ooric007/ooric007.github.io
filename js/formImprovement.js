@@ -143,7 +143,7 @@ function validateNameField() {
   if (nameInput.value.trim() === '') {
     nameInput.style.border = '2px solid red';
     nameError.style.display = 'block';
-    nameError.innerText = 'You must enter your name';
+    nameError.innerText = 'Please enter your name.';
   } else {
     nameInput.style.border = '2px solid #ccc';
     nameError.style.display = 'none';
@@ -158,7 +158,7 @@ function validateEmailField() {
   if (!emailRegex.test(emailInput.value)) {
     emailInput.style.border = '2px solid red';
     emailError.style.display = 'block';
-    emailError.innerText = 'You must enter a valid email address to submit';
+    emailError.innerText = 'Please enter a valid email address.';
   } else {
     emailInput.style.border = '2px solid #ccc';
     emailError.style.display = 'none';
@@ -173,12 +173,20 @@ function validatePhoneField() {
   if (phoneInput.value !== '' && !phoneRegex.test(phoneInput.value)) {
     phoneInput.style.border = '2px solid red';
     phoneError.style.display = 'block';
-    phoneError.innerText = 'Please enter a valid US phone number in the format (###) ###-####';
+    phoneError.innerText = 'Please enter a valid US phone number in the format (###) ###-####.';
   } else {
     phoneInput.style.border = '2px solid #ccc';
     phoneError.style.display = 'none';
   }
 }
+
+const messageInput = document.getElementById('message');
+const characterCount = document.getElementById('message-character-count');
+
+messageInput.addEventListener('input', function () {
+  const characterLength = messageInput.value.length;
+  characterCount.textContent = `${characterLength} / 500`;
+});
 
 function validateMessageField() {
   const messageInput = document.getElementById('message');
@@ -187,7 +195,7 @@ function validateMessageField() {
   if (messageInput.value.trim() === '') {
     messageInput.style.border = '2px solid red';
     messageError.style.display = 'block';
-    messageError.innerText = 'You must enter a message to submit';
+    messageError.innerText = 'Please enter a message.';
   } else {
     messageInput.style.border = '2px solid #ccc';
     messageError.style.display = 'none';
