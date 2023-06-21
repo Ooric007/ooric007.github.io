@@ -1,0 +1,156 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eric Waldbaum - Quality Engineer Lead's Portfolio Website</title>
+    <meta
+      name="description"
+      content="Visit Eric Waldbaum's website, ooric.com, to learn about his quality engineer lead expertise, view his impressive portfolio, and discover some of his interests."
+      data-el-id="description"
+    />
+    <meta
+      content="Visit Eric Waldbaum's website, ooric.com, to learn about his quality engineer lead expertise, view his impressive portfolio, and discover some of his interests."
+      property="og:description"
+      data-el-id="og:description"
+    />
+    <meta name="robots" content="noindex" data-el-id="robots" />
+    <meta
+      content="Contact"
+      property="og:title"
+      data-el-id="og:title"
+    />
+    <meta
+      name="keywords"
+      content="Eric Waldbaum, Ooric, quality engineer lead"
+      data-el-id="keywords"
+    />
+    <link
+      rel="canonical"
+      href="https://latest-user-app.zyro.com/about"
+      data-el-id="canonical"
+    />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <header class="header">
+      <!-- Logo -->
+      <a href=".." class="logo">EW</a>
+      <!-- Hamburger icon -->
+      <input class="side-menu" type="checkbox" id="side-menu" />
+      <label class="hamb" for="side-menu"
+        ><span class="hamb-line"></span
+      ></label>
+      <!-- Menu -->
+      <nav class="nav">
+        <ul class="menu">
+          <li><a href="..">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="subnav">
+            <label for="side-menu" class="toggle-menu-label">
+              <p class="subnavdropdown">Work <span class="caret"></span></p>
+            </label>
+            <div class="subnav-content">
+              <a href="methods.html">Methods</a>
+              <hr />
+              <a href="deloitte.html">Deloitte Digital</a>
+              <a href="amazon.html">Amazon.com</a>
+              <a href="microsoft.html">Microsoft</a>
+            </div>
+          </li>
+          <li><a href="contact.html" class="active">Contact Eric</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="contact-info-section">
+        <div class="title-container">
+            <h3>CONTACT ERIC</h3>
+            <h1 id="greetingId">Get in touch today</h1>
+        </div>
+        <div class="column-container">
+            <div class="contact-column">
+                <div class="tile-container">
+                    <div class="tile">
+                      <div class="text-row">
+                        <h3>My office</h3>
+                      </div>
+                      <div class="text-row">
+                        <p>Bellevue, WA</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="tile-container">
+                    <div class="tile">
+                      <div class="text-row">
+                        <h3>My email</h3>
+                      </div>
+                      <div class="text-row">
+                        <p><a href="mailto:Eeric83@hotmail.com?subject=Ooric%20Site%20Message" rel="nofollow">Eeric83@hotmail.com</a></p>
+                      </div>
+                    </div>
+                </div>
+                <div class="tile-container">
+                    <div class="tile">
+                      <div class="text-row">
+                        <h3>My Linkedin</h3>
+                      </div>
+                      <div class="text-row">
+                        <p><a href="https://www.linkedin.com/in/eric-waldbaum-59752612/" target="_blank">https://www.linkedin.com/in/eric-waldbaum-59752612/</a><br /></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43047.39214431262!2d-122.19233079229791!3d47.59770545331718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906bcfa3a66041%3A0xbacf5482ead00765!2sBellevue%2C%20WA!5e0!3m2!1sen!2sus!4v1687295456564!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="title-container">
+        <h2>SUBMIT FORM</h2>
+      </div>
+
+    <form class="contact-form" id="contact-form" action="mailto:Eeric83@hotmail.com" method="POST" enctype="text/plain">
+
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required maxlength="100" placeholder="Your name">
+    
+        <label for="email">Email address*</label>
+        <input type="email" id="email" name="email" required maxlength="254" placeholder="Your email address">
+    
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" maxlength="14" placeholder="(###) ###-####">
+    
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" required maxlength="500" placeholder="Enter your message"></textarea>
+    
+        <div class="error-message" id="name-error"></div>
+        <div class="error-message" id="email-error"></div>
+        <div class="error-message" id="phone-error"></div>
+        <div class="error-message" id="message-error"></div>
+    
+        <button type="submit">Submit</button>
+      </form>
+                 
+      
+    </section>
+
+    <div id="iframe-container">
+        <!-- START FOOTER SECTION -->
+        <iframe src="../sections/footerSection.html" id="footerSection" frameborder="0" onload="resizeIframe(this)"></iframe>
+        <!-- END FOOTER SECTION -->
+      </div>
+
+    <script src="../js/formImprovement.js"></script>
+    <script src="../js/adjustIFrameHeight.js"></script>
+    <script src="../js/breakline.js"></script>
+    <script src="../js/setTilesToMaxHeight.js"></script>
+  </body>
+</html>

@@ -755,7 +755,7 @@ i {
 
 /* About Me */
 
-.about, .work, .accolades {
+.about, .work, .accolades, .contact-info-section {
   padding: 20px;
   background-color: #f3f3f2;
 }
@@ -837,6 +837,8 @@ h3 {
   width: 100px;
   height: auto;
   margin-right: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 
 .link-tile .content {
@@ -853,7 +855,7 @@ h3 {
   display: inline;
   align-items: center;
   text-decoration: none;
-  color: #000; /* Set the color for the link */
+  color: #000000;
 }
 
 .link-tile a:hover {
@@ -866,10 +868,14 @@ h3 {
 @media (max-width: 768px) {
   #greetingId {
     margin-bottom: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 48px; /* Adjust the font size as needed */
+    flex-wrap: wrap;
+    font-size: 48px;
+  }
+
+  .link-tile img {
+    width: 50px; 
+    height: auto;
+    margin-right: 5px;
   }
 
   .links .paragraphs {
@@ -961,7 +967,7 @@ h3 {
   font-size: 24px;
 }
 
-.text-row p {
+.text-row p, a {
   font-size: 16px;
   color: #4a4a43;
 }
@@ -1073,9 +1079,97 @@ h3 {
   font-style: italic;
 }
 
+#accolades h2 {
+  padding-right: 20px;
+  text-align: left;
+  font-family: "Libre Caslon Display", serif;
+  color: #4a4a43;
+}
+
+#accolades p {
+  text-align: left;
+  margin-bottom: 40px;
+  color: #4a4a43;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .microsoft-list li {
     align-items: flex-start; /* Align the list items to start from the top */
   }
+  .google-map {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+  }
 }
+
+/* Contact Eric */
+.contact-form {
+  margin: 0 auto;
+  max-width: 400px;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 150px; /* Adjust the height value as needed */
+}
+
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  border-color: #ccc;
+}
+
+.error-message {
+  display: none;
+  color: red;
+  margin-top: 5px;
+  text-align: left;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
