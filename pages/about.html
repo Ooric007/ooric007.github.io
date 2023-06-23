@@ -387,7 +387,14 @@
 
   <script src="../js/adjustIFrameHeight.js"></script>
   <script src="../js/breakline.js"></script>
-  <script src="../js/setTilesToMaxHeight.js"></script>
+  <script>
+    // Check if the screen width is greater than 768px (desktop size)
+    if (window.innerWidth > 768) {
+      var script = document.createElement('script');
+      script.src = '../js/setTilesToMaxHeight.js';
+      document.head.appendChild(script);
+    }
+  </script>
 </body>
 
 </html>
