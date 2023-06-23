@@ -120,12 +120,12 @@ nav ul li a.active {
   pointer-events: none;
 }
 
-nav ul li:hover > a:not(.active) {
+nav ul li:hover>a:not(.active) {
   text-decoration: underline;
   text-underline-offset: 8px;
 }
 
-nav ul li:hover::after > a:not(.active) {
+nav ul li:hover::after>a:not(.active) {
   width: 100%;
 }
 
@@ -137,7 +137,6 @@ nav ul li:hover::after > a:not(.active) {
 
 .menu a:hover {
   background-color: var(--gray);
-
   font-weight: bolder;
 }
 
@@ -270,7 +269,7 @@ body {
 }
 
 .scrollTxt {
-  margin: 20px 0;
+  margin: 24px 0;
   /* Add space above and below */
   text-align: center;
   /* Center text within the container */
@@ -369,30 +368,30 @@ a:hover {
 }
 
 /* Toggle menu icon */
-.side-menu:checked ~ nav {
+.side-menu:checked~nav {
   max-height: 100%;
   display: block;
 }
 
-.side-menu:checked ~ .hamb .hamb-line {
+.side-menu:checked~.hamb .hamb-line {
   background: transparent;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::before {
+.side-menu:checked~.hamb .hamb-line::before {
   transform: rotate(-45deg);
   top: 0;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::after {
+.side-menu:checked~.hamb .hamb-line::after {
   transform: rotate(45deg);
   top: 0;
 }
 
-.side-menu:checked ~ .nav .subnav-content {
+.side-menu:checked~.nav .subnav-content {
   display: block;
 }
 
-.side-menu:checked ~ .nav .toggle-menu-label .caret {
+.side-menu:checked~.nav .toggle-menu-label .caret {
   transform: rotate(180deg);
   transition: none;
 }
@@ -461,6 +460,7 @@ a:hover {
 #welcome-section p a {
   color: #ffffff;
 }
+
 #welcome-section p a:hover {
   background-color: transparent;
   color: #fbc02d;
@@ -599,7 +599,8 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 400px; /* Adjust the max-width as needed */
+  max-width: 400px;
+  /* Adjust the max-width as needed */
   margin: 0 auto;
   background: #ad1457;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -608,7 +609,8 @@ a:hover {
 }
 
 .contact .project-image {
-  height: 325px; /* Adjust the height as needed */
+  height: 325px;
+  /* Adjust the height as needed */
   width: 305px;
   object-fit: cover;
   border-top-right-radius: 28px;
@@ -624,7 +626,7 @@ a:hover {
   text-transform: uppercase;
 }
 
-.contact-section-header > h2 {
+.contact-section-header>h2 {
   font-size: 48px;
 }
 
@@ -679,7 +681,7 @@ a:hover {
     height: 100%;
   }
 
-  .contact-section-header > h2 {
+  .contact-section-header>h2 {
     font-size: 48px;
   }
 }
@@ -784,6 +786,14 @@ h3 {
   -webkit-text-fill-color: #4a4a43;
 }
 
+#greetingId #youtube-header-link {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  -webkit-text-fill-color: #4a4a43;
+  margin: 0;
+}
+
 .content-container {
   display: flex;
   flex-wrap: wrap;
@@ -809,6 +819,10 @@ h3 {
   color: #4a4a43;
 }
 
+.about-work .work .paragraphs p {
+  margin-bottom: -24px;
+}
+
 .image-container {
   flex: 1;
   text-align: center;
@@ -819,16 +833,34 @@ h3 {
   height: 600px;
 }
 
+@media (max-width: 768px) {
+  #videos {
+    margin-top: 40px;
+  }
+
+  .youtube-video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+
+  #videos h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+}
+
 /* Links */
 .links {
   padding: 20px;
   background-color: #ffffff;
 }
+
 .links .paragraphs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+
 .paragraphs a {
   margin-left: 0em;
   margin-right: 0em;
@@ -955,11 +987,13 @@ h3 {
   background-color: #f2f2f2;
   padding: 10px;
 }
+
 .column-header h2 {
   font-size: 36px;
   text-align: center;
   color: #4a4a43;
 }
+
 .placeholder {
   height: 100px;
 }
@@ -1002,23 +1036,39 @@ a {
   .education-section {
     flex-direction: column;
   }
+
   .image-container img {
     order: -1;
     margin-bottom: 20px;
     width: 200px;
     height: 300px;
   }
+
   .column-header,
-  .tile {
-    width: 100%;
+  .tile-container {
+    max-width: 100%;
+    margin: 0 auto;
   }
+
+  .column-header,
+  .tile-container .tile {
+    margin: 0 auto;
+  }
+
+  .column-header,
+  .tile-container .tile .text-row p a {
+    margin: 0 auto;
+  }
+
   .column:nth-child(3) .column-header {
     display: none;
   }
 }
 
 /* Roles */
-.testing, #uxdesign, #leader {
+.testing,
+#uxdesign,
+#leader {
   padding: 20px;
   background-color: #ffffff;
 }
@@ -1084,11 +1134,12 @@ a {
 
 .course-list {
   padding-left: 40px;
-  list-style-position: inside; 
+  list-style-position: inside;
 }
 
 #course-li {
-  display: list-item; /* Display each list item on a new line */
+  display: list-item;
+  /* Display each list item on a new line */
   margin-bottom: 10px;
   list-style: disc;
 }
@@ -1098,12 +1149,6 @@ a {
 }
 
 @media (max-width: 768px) {
-  #greetingId {
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    font-size: 48px;
-  }
-
   .method-tile img {
     width: 100px;
     height: auto;
@@ -1142,16 +1187,19 @@ a {
 
 .client-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  /* Center the entire row horizontally */
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Center the row horizontally within its container */
 }
 
 .client-row img {
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
   margin-bottom: 2rem;
 }
 
@@ -1228,8 +1276,10 @@ a {
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .microsoft-list li {
-    align-items: flex-start; /* Align the list items to start from the top */
+    align-items: flex-start;
+    /* Align the list items to start from the top */
   }
+
   .google-map {
     position: relative;
     padding-bottom: 75%;
