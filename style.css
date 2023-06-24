@@ -879,7 +879,7 @@ h3 {
     margin-top: 40px;
   }
   #videos .link-tile {
-    padding: 0 4%; /* Adjust the padding as desired */
+    padding: 0 4%;
   }
 
   .youtube-video {
@@ -1081,6 +1081,11 @@ a {
     flex-direction: column;
   }
 
+  .education-section .content-container img{
+    width: 280px;
+    height: 280px;
+  }
+
   .image-container img {
     order: -1;
     margin-bottom: 20px;
@@ -1109,8 +1114,6 @@ a {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
   }
-
-
 
   .column-header,
   .tile-container .tile .text-row p a {
@@ -1189,9 +1192,16 @@ a {
   max-width: 800px;
 }
 
+#ms-paragraph .list-container {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
 .course-list {
   padding-left: 40px;
   list-style-position: inside;
+  padding-top: 10px;
 }
 
 #course-li {
@@ -1199,6 +1209,7 @@ a {
   /* Display each list item on a new line */
   margin-bottom: 10px;
   list-style: disc;
+  text-align: left;
 }
 
 .about-work .paragraphs .viewPrototype {
@@ -1210,6 +1221,9 @@ a {
     width: 100px;
     height: auto;
 
+  }
+  .course-list, .microsoft-list {
+    margin-top: 10px;
   }
 
   .testing .paragraphs {
@@ -1307,6 +1321,7 @@ a {
 .microsoft-list li:before {
   content: "•";
   margin-right: 0.5em;
+  margin-left: 1.5em;
 }
 
 #accolades {
@@ -1424,3 +1439,28 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+@media (max-width: 768px) {
+  .contact-info-section .column-container, .google-map {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    width: 100%;
+  }
+
+  .contact-info-section .column-container .tile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contact-info-section .column-container .tile {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+
+  }
+}
+
+
