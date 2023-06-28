@@ -414,7 +414,7 @@ a:hover {
 }
 
 /* Responsiveness */
-@media (min-width: 768px) {
+@media (min-width: 940px) {
   .nav {
     max-height: none;
     margin-left: auto;
