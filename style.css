@@ -1236,6 +1236,11 @@ a {
 .about-work .paragraphs .viewPrototype {
   text-align: center;
 }
+
+#tester .paragraphs, #developer .paragraphs, #prototypeParagraphs, #leader .paragraphs {
+  padding-bottom: 20px;
+}
+
 #prototypeParagraphs #lowFiPrototypeImg {
   max-width: 100%; /* Set the maximum width to 100% */
   height: auto;
