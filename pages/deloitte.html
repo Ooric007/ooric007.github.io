@@ -23,7 +23,9 @@
   <!-- Navigation bar -->
   <header class="header">
     <!-- Logo -->
-    <a href=".." class="logo">EW</a>
+    <a id="ooricLogoLink" href="..">
+      <img id="ooricLogo" src="/media/ooricLogo.jpg" alt="Ooric website logo" />
+    </a>
     <!-- Hamburger icon -->
     <input class="side-menu" type="checkbox" id="side-menu" />
     <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
@@ -70,6 +72,40 @@
     <div class="title-container">
       <h3>CLIENTS</h3>
     </div>
+    <div class="paragraphs" id="client-projects">
+      <p>
+        My most recent role was a Test Lead on international Scrum teams for a top retail company, I played a pivotal
+        role in the success of the project. I took the lead in architecting Azure test cases and implementing C#
+        automation using <a href="https://learn.microsoft.com/en-us/nuget/what-is-nuget" target="_blank">NuGet</a> and
+        <a href="https://www.postman.com" target="_blank">Postman</a> for APIs, Selenium for
+        Web UI, and Swift for Apple devices. Additionally, I contributed
+        to the growth of the teams, fostering a culture of success through agile methodologies and cross-team
+        collaboration.
+      </p>
+      <p>
+        As the Test Lead for a responsive React website of a VR company, I played a crucial role in ensuring the quality
+        and success of the project. The website introduced various new features including the Omniverse, custom <a
+          href="https://www.xola.com/" target="_blank">Xola
+          booking</a>, <a href="https://mailchimp.com/" target="_blank">MailChimp</a>, <a href="https://www.twilio.com/"
+          target="_blank">Twilio</a>, <a href="http://mandrill.com/" target="_blank">Mandrill</a>, <a
+          href="https://ironcladapp.com/">Ironclad PactSafe</a>, and API service integrations, as well as SEO
+        enhancements.
+        In addition to my testing responsibilities, I took the lead in managing the copy effort by coding strings in
+        multiple languages and collaborating closely with the client, copy editor, and the rest of the team. I also
+        facilitated a daily triage call with the client, implemented Python and service automation to streamline
+        processes, and developed an <a href="https://www.ibm.com/products/watson-assistant/" target="_blank">IBM Watson
+          chatbot</a> to as a possible new feature.
+      </p>
+      <p>
+        My longest project was testing the Showtime Anytime® and Showtime apps for Android, Kindle Fire, Chromecast,
+        Android TV, Fire Stick/TV, Tizen/WebOS TVs, iPhone, iPad, and Roku. Frequently used <a
+          href="https://www.charlesproxy.com" target="blank">Charles Proxy</a>, <a href="https://www.postman.com"
+          target="_blank">Postman</a>, <a href="https://www.testrail.com/" target="_blank">architected test suite</a>
+        and charter tests, added automation, and lead testing efforts while acting as a scrum master. Maintenance
+        updates included Downloads, Live TV, analytics, device management, PPV, in-app purchasing, Android and iOS
+        optimization.
+      </p>
+    </div>
 
     <div class="client-row">
       <a href="https://www.costco.com/join-costco.html" target="_blank">
@@ -105,17 +141,17 @@
           alt="SuperCuts logo" />
         <a href="https://web.archive.org/web/20161124013605/https://www.jobgateway.pa.gov/jponline/Admin/Common/Portal.aspx"
           target="_blank">
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=356,h=102,fit=crop/AE0qprnW58U2k2WP/pajobgateway-mxBxrb22POseG9RP.png"
-          alt="Commonwealth of Pennsylvania CareerLink logo" /></a>
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=356,h=102,fit=crop/AE0qprnW58U2k2WP/pajobgateway-mxBxrb22POseG9RP.png"
+            alt="Commonwealth of Pennsylvania CareerLink logo" /></a>
         <a href="https://web.archive.org/web/20141006164150/http://www.deloittedigital.com/us" target="_blank">
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=262,h=76,fit=crop/AE0qprnW58U2k2WP/ddimage-YBgopwjj2VsolvEm.jpeg"
-          alt="Deloitte Digital logo" /></a>
-      <a href="https://apps.apple.com/us/app/trutv/id396972659" target="_blank">
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=144,h=144,fit=crop/AE0qprnW58U2k2WP/trutvlogo-Yan2BQ00Ryi1e4Wq.png"
-          alt="truTV logo" /></a>
+          <img id="DDlogoImg"
+            src="/media/DDlogo.png"
+            alt="Deloitte Digital logo" /></a>
+        <a href="https://apps.apple.com/us/app/trutv/id396972659" target="_blank">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=144,h=144,fit=crop/AE0qprnW58U2k2WP/trutvlogo-Yan2BQ00Ryi1e4Wq.png"
+            alt="truTV logo" /></a>
     </div>
   </section>
 
@@ -126,13 +162,42 @@
       </div>
 
       <div class="paragraphs" id="accolades">
-        <p>Received over 5 Deloitte Applause Awards from leadership for exceptional work, 2022 and prior years</p>
-        <p><a href="https://www.addyseattle.com" target="_blank">ADDY</a> and <a href="https://www.aiva.org"
+        <p class="notItalic"> &#127942; Received over 5 Deloitte Applause Awards from leadership for exceptional work, 2022 and prior years</p>
+        <p class="notItalic"> &#127942; <a href="https://www.addyseattle.com" target="_blank">ADDY</a> and <a href="https://www.aiva.org"
             target="_blank">W3 Gold</a> Winner for work on Deloitte Digital responsive website, 2013</p>
         <p>
-          "Eric is one of the most detailed oriented and engaged Quality Assurance professionals I have ever worked
-          with! He is very passionate about ensuring a great experience is delivered to the customer."<br />– Marc E.,
-          iOS Architect (current Sr. Software Engineer at Chewy)
+          <q>You are hands down the best QA I've worked with</q><br />– Tina Y.,
+          Product Owner, <a href="https://www.costco.com/" target="_blank">Costco Wholesale</a>
+        </p>
+        <p>
+          <q>Wow, just wow [with two thumbs up after showing client demo]</q><br />– Guislain L.,
+          Solution Architect, <a href="https://www.costco.com/" target="_blank">Costco Wholesale</a>
+        </p>
+        <p>
+          <q>You are an expert with everything! Thank you so much for helping me learn so much.</q><br />– Vianney L.,
+          Quality Engineer (current Automation Quality Engineer at <a href="https://www.gft.com/us/en"
+            target="_blank">GFT</a>)
+        </p>
+        <p>
+          <q>Eric is the most diligent QA I've ever worked with. You're in good hands [with him]</q><br />– Ashley P.,
+          Associate Creative Director (current UX Director at <a href="https://www.celerity.com/"
+            target="_blank">Celerity</a>)
+        </p>
+        <p>
+          <q>I want it to be known, and will shout it from the uppermost rafters, that Eric Waldbaum
+            has been a prominent leader on the project from Day 1. His level of ownership over the
+            product, his attention to the most minute of detail, his rigor and standard, have made a
+            HUGE impact on the quality of work we’ve delivered.
+            I don’t often get a dedicated QA on my projects, but when I do, his name is the one I request. I
+            remembered his work from HP back in the <a href="https://en.wikipedia.org/wiki/Fremont,_Seattle"
+              target="_blank">Fremont</a> days, and his work on The VOID is stellar.</q><br />– Brian E.,
+          Front-end Design/Dev &#x1f984; (current UX Engineer &#x1f984; at <a href="https://www.cisco.com/"
+            target="_blank">Cisco</a>)
+        </p>
+        <p>
+          <q>Eric is one of the most detailed oriented and engaged Quality Assurance professionals I have ever worked
+          with! He is very passionate about ensuring a great experience is delivered to the customer.</q><br />– Marc E.,
+          iOS Architect (current Sr. Software Engineer at <a href="https://www.chewy.com/" target="_blank">Chewy</a>)
         </p>
       </div>
     </div>

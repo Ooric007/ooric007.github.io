@@ -322,11 +322,28 @@ a:hover {
 }
 
 /* Logo */
-.logo {
+
+.header #ooricLogo {
+  max-width: 100%;
+  height: 68.6px;
+  width: 259px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 24px;
+  vertical-align: middle;
+}
+
+.header #ooricLogoLink {
   display: inline-block;
-  color: var(--white);
-  font-size: 60px;
-  margin-left: 10px;
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+.header #ooricLogoLink:hover #ooricLogo {
+  border: 4px solid #fbc02d;
+  box-sizing: border-box;
 }
 
 /* Menu Icon */
@@ -811,6 +828,7 @@ h3 {
   text-align: left;
   font-family: "Libre Caslon Display", serif;
   color: #4a4a43;
+  font-size: 36px;
 }
 
 .paragraphs p {
@@ -924,7 +942,8 @@ h3 {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  width: 80%;
+  padding: 10px;
+  border: 2px solid black;
 }
 
 .link-tile img {
@@ -1146,6 +1165,8 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid black;
 }
 
 .method-tile img {
@@ -1215,6 +1236,15 @@ a {
 .about-work .paragraphs .viewPrototype {
   text-align: center;
 }
+#prototypeParagraphs #lowFiPrototypeImg {
+  max-width: 100%; /* Set the maximum width to 100% */
+  height: auto;
+  margin-right: 5px;
+}
+
+#prototypeParagraphs #highFiPrototypeImg:hover {
+  border: 2px solid #000000; /* Apply the black solid border on hover */
+}
 
 @media (max-width: 768px) {
   .method-tile img {
@@ -1250,6 +1280,13 @@ a {
   padding: 20px;
 }
 
+.clients-section p {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .clients-section {
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1266,6 +1303,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   /* Center the row horizontally within its container */
+  margin-top: 16px;
 }
 
 .client-row img {
@@ -1274,6 +1312,11 @@ a {
   margin-bottom: 2rem;
 }
 
+.client-row a:hover > img {
+  border: 2px solid #fbc02d;
+}
+
+
 @media (max-width: 768px) {
   .client-row {
     flex-direction: column;
@@ -1281,8 +1324,27 @@ a {
   }
 
   .client-row img {
-    max-width: 80%;
-    margin-bottom: 10px;
+    max-height: 100%;
+    width: auto;
+    height: 200px; /* Set the desired fixed height for each client row */
+    object-fit: contain;
+  }
+  .client-row a {
+    padding-top:20px;
+    padding-bottom:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .client-row #MacOffice2011-link {
+    margin: 0px;
+    padding: 0;
+  }
+  
+  .client-row #MacOffice2011-logo {
+    width: 100%; /* Increase the width to make the image larger */
+    max-width: none;
   }
 }
 
@@ -1307,8 +1369,9 @@ a {
 .microsoft-list {
   display: inline-block;
   padding-left: 0;
-  padding-right: 10px;
-  padding-bottom: 40px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 32px;
   list-style-position: inside;
   text-align: left;
 }
@@ -1330,6 +1393,14 @@ a {
   margin: 0 auto;
   padding: 20px;
   font-style: italic;
+}
+
+#accolades p.notItalic {
+  font-style: normal;
+}
+
+#accolades p.chartRibbonQuote {
+  margin-top: -30px;
 }
 
 #accolades h2 {
