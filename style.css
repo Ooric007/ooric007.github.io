@@ -216,7 +216,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 20px;
+  bottom: 24px;
   opacity: 0.5;
   transition: ease 1s;
   animation: bouncey 1.6s linear infinite;
@@ -476,6 +476,7 @@ a:hover {
 
 #welcome-section p a {
   color: #ffffff;
+  margin: 0;
 }
 
 #welcome-section p a:hover {
@@ -516,9 +517,12 @@ a:hover {
   #welcome-padding {
     margin-top: -80px;
   }
+  #welcome-section p {
+    text-align: center;
+  }
 }
 
-/* Section 2*/
+/* Projects section */
 
 .projects-section {
   text-align: center;
@@ -533,16 +537,12 @@ a:hover {
   letter-spacing: 3px;
 }
 
-@media (max-width: 768px) {
-  .projects-section-header {
-    font-size: 4rem;
-  }
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 4rem;
+  justify-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -550,13 +550,15 @@ a:hover {
   margin-bottom: 6rem;
 }
 
-@media (max-width: 30.625em) {
+@media (max-width: 768px) {
   .projects-section {
     padding: 6rem 1rem;
   }
-
+  .projects-section-header {
+    font-size: 4rem;
+  }
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 }
 
@@ -565,6 +567,8 @@ a:hover {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 28px;
   transition: all 2s, transform 0.5s, box_shadow 0.5s;
+  max-width: 352px;
+  max-height: 400px;
 }
 
 .project:hover {
