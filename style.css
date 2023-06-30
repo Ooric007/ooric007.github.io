@@ -138,6 +138,7 @@ nav ul li:hover::after>a:not(.active) {
 .menu a:hover {
   background-color: var(--gray);
   font-weight: bolder;
+  text-underline-offset: 8px;
 }
 
 .menu p {
@@ -187,7 +188,6 @@ nav ul li:hover::after>a:not(.active) {
   display: block;
   position: relative;
   z-index: 1;
-  font-weight: bolder;
 }
 
 body {
@@ -308,7 +308,7 @@ a {
 a:hover {
   color: #fbc02d;
   text-decoration: underline;
-  text-underline-offset: 8px;
+  text-underline-offset: 4px;
 }
 
 /* Header */
@@ -450,6 +450,7 @@ a:hover {
     background-color: transparent;
     color: #fbc02d;
     font-weight: bolder;
+    text-underline-offset: 8px;
   }
 
   .hamb {
@@ -475,14 +476,8 @@ a:hover {
 }
 
 #welcome-section p a {
-  color: #ffffff;
+  color: #fff;
   margin: 0;
-}
-
-#welcome-section p a:hover {
-  background-color: transparent;
-  color: #fbc02d;
-  font-weight: bolder;
 }
 
 #welcome-padding {
@@ -495,7 +490,7 @@ a:hover {
 }
 
 #welcome-li a {
-  color: #ffffff;
+  color: #fff;
   margin: 0;
 }
 
@@ -986,9 +981,7 @@ h3 a {
 }
 
 .link-tile a:hover {
-  color: #fbc02d;
   text-decoration: underline;
-  text-underline-offset: 8px;
   background-color: transparent;
   font-weight: bolder;
 }
@@ -1224,12 +1217,11 @@ a {
   display: inline;
   align-items: center;
   text-decoration: none;
-  color: #000000;
+  color: #4a4a43;
 }
 
 .method-tile a:hover {
   text-decoration: underline;
-  text-underline-offset: 8px;
 }
 
 #uxdesign .paragraphs {
@@ -1533,10 +1525,15 @@ button[type="submit"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 button[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+.white-heart {
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -1570,5 +1567,7 @@ button[type="submit"]:hover {
     width: 90%;
     max-width: 600px;
     margin: 0 auto 20px;
+    padding: 20px;
+    box-sizing: content-box;
   }
 }
