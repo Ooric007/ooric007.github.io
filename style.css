@@ -494,6 +494,11 @@ a:hover {
   list-style: disc;
 }
 
+#welcome-li a {
+  color: #ffffff;
+  margin: 0;
+}
+
 .welcome-list {
   padding-left: 100px;
   padding-right: 10px;
@@ -799,7 +804,12 @@ h3 {
   font-size: 16px;
   color: #4a4a43;
   text-align: center;
-  margin-top: 5px;
+  padding-top: 5px;
+}
+
+h3 a {
+  -webkit-text-fill-color: #4a4a43;
+  margin: 0;
 }
 
 #greetingId {
@@ -1116,8 +1126,7 @@ a {
     height: 300px;
   }
 
-  .column-header,
-  .tile-container {
+  .column-header, .tile-container {
     max-width: 100%;
     margin: 0 auto;
   }
@@ -1143,20 +1152,37 @@ a {
     margin: 0 auto;
   }
 
+  .tile-container {
+    justify-content: center;
+    align-items: center;
+  }
+
   .column:nth-child(3) .column-header {
     display: none;
   }
 }
 
 /* Roles */
+#tester, #developer, #uxdesign, #uxd-methods, #leader {
+  scroll-margin-top: 90px;
+}
+
+.black {
+  color: black;
+}
+
 .testing,
-#uxdesign,
-#leader {
+#uxdesign, #prototype-section {
   padding: 20px;
   background-color: #ffffff;
 }
 
-.testing .paragraphs {
+.uxd-section {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.testing .paragraphs, .ux .paragraphs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -1265,7 +1291,7 @@ a {
     margin-top: 10px;
   }
 
-  .testing .paragraphs {
+  .testing .paragraphs, .ux .paragraphs {
     grid-template-columns: 1fr;
   }
 
@@ -1431,13 +1457,6 @@ a {
     align-items: flex-start;
     /* Align the list items to start from the top */
   }
-
-  .google-map {
-    position: relative;
-    padding-bottom: 75%;
-    height: 0;
-    overflow: hidden;
-  }
 }
 
 /* Contact Eric */
@@ -1521,26 +1540,35 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 768px) {
+  .google-map {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+  }
+  
   .contact-info-section .column-container, .google-map {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start; 
-    width: 100%;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%; 
+    overflow: hidden; 
   }
 
   .contact-info-section .column-container .tile-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    max-width: 100%; 
+    overflow: hidden; 
   }
 
   .contact-info-section .column-container .tile {
     width: 90%;
     max-width: 600px;
     margin: 0 auto 20px;
-
   }
 }
-
-
