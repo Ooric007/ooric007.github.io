@@ -1460,6 +1460,15 @@ a {
   text-align: center;
 }
 
+.contact-info-section .column-container .contact-column .tile-container .tile .text-row {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info-section .column-container .contact-column .tile-container .tile .text-row p:not(:last-child) {
+  margin-right: 10px;
+}
+
 .tile-container a {
   background-color: transparent;
   color: #000000;
@@ -1530,10 +1539,6 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #0056b3;
-}
-
-.white-heart {
-  color: white;
 }
 
 @media (max-width: 768px) {
