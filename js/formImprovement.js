@@ -115,7 +115,7 @@ function validateForm(form) {
   if (phoneInput.value.trim() !== '' && !phoneRegex.test(phoneInput.value.trim())) {
     phoneInput.style.border = '2px solid red';
     phoneError.style.display = 'block';
-    phoneError.innerText = 'Please enter a valid phone number (e.g., (###) ###-####)';
+    phoneError.innerText = 'Please enter a valid phone number as (###) ###-#### or enter it in your message';
     isValid = false;
   } else {
     phoneInput.style.border = '2px solid #ccc';
@@ -200,7 +200,7 @@ function validatePhoneField() {
   if (phoneInput.value.trim() !== '' && !phoneRegex.test(phoneInput.value.trim())) {
     phoneInput.style.border = '2px solid red';
     phoneError.style.display = 'block';
-    phoneError.innerText = 'Please enter a valid phone number (e.g., (###) ###-####).';
+    phoneError.innerText = 'Please enter a valid phone number as (###) ###-#### or enter it in your message.';
   } else {
     phoneInput.style.border = '2px solid #ccc';
     phoneError.style.display = 'none';
@@ -294,7 +294,7 @@ function validatePhoneField() {
   if (phoneInput.value !== '' && !phoneRegex.test(phoneInput.value)) {
     phoneInput.style.border = '2px solid red';
     phoneError.style.display = 'block';
-    phoneError.innerText = 'Please enter a valid phone number (e.g., (###) ###-####).';
+    phoneError.innerText = 'Please enter a valid phone number as (###) ###-#### or enter it in your message.';
   } else {
    phoneInput.style.border = '2px solid #ccc';
     phoneError.style.display = 'none';
@@ -358,9 +358,10 @@ function handleFormSubmit(event, form) {
     const encodedSubject = encodeURIComponent(subjectInput.value.trim());
     const decodedName = decodeURIComponent(encodedName);
     const decodedPhoneNumber = decodeURIComponent(encodedPhoneNumber);
-    const encodedMessage = encodeURIComponent(`${encodedBody}\n\nSincerely,\n${decodedName}\n${decodedPhoneNumber}`);
+    const decodedBody = decodeURIComponent(encodedBody);
+    const encodedMessage = encodeURIComponent(`${decodedBody}\n\nSincerely,\n${decodedName}\n${decodedPhoneNumber}`);
     const decodedMessage = decodeURIComponent(encodedMessage.replace(/\+/g, ' '));
-    
+
     const mailtoLink = `mailto:${decodedEmail}?subject=${encodedSubject}&body=${encodeURIComponent(decodedMessage)}`;    
     window.location.href = mailtoLink;
 
