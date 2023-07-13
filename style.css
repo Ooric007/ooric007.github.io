@@ -3,9 +3,9 @@
 
 /* Theming */
 :root {
-  --white: #f9f9f9;
-  --black: #36383f;
-  --gray: #85888c;
+  --white: #F9F9F9;
+  --black: #36383F;
+  --gray: #85888C;
 }
 
 /* variables */
@@ -56,7 +56,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
-  color: #fff;
+  color: #FFF;
 }
 
 /* Need the following for having a higher specificity */
@@ -71,7 +71,7 @@ h2 {
 h1 {
   z-index: 2;
   font-size: 72px;
-  background: -webkit-radial-gradient(#e8f5e9, #b2dfdb);
+  background: -webkit-radial-gradient(#E8F5E9, #B2DFDB);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -79,13 +79,13 @@ h1 {
 
 h2 {
   font-size: 48px;
-  color: #2196f3;
+  color: #2196F3;
 }
 
 p {
   z-index: 1;
   font-size: 2rem;
-  color: #e7dfbe;
+  color: #E7DFBE;
 }
 
 @media (max-width: 768px) {
@@ -154,7 +154,7 @@ nav ul li:hover::after>a:not(.active) {
   margin-left: 5px;
   border-style: solid;
   border-width: 8px 8px 0 8px;
-  border-color: #fff transparent transparent transparent;
+  border-color: #FFF transparent transparent transparent;
   transition: transform 0.3s ease;
 }
 
@@ -294,7 +294,7 @@ p {
   margin-left: 1.5em;
   margin-right: 1.5em;
   font-size: 1em;
-  color: #fff;
+  color: #FFF;
 }
 
 a {
@@ -302,11 +302,11 @@ a {
   margin-left: 1.5em;
   margin-right: 1.5em;
   font-size: 1em;
-  color: #fff;
+  color: #FFF;
 }
 
 a:hover {
-  color: #fbc02d;
+  color: #FFD700;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -324,13 +324,13 @@ a:hover {
 /* Logo */
 
 .header #ooricLogo {
-  max-width: 100%;
   height: 68.6px;
   width: 259px;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 24px;
   vertical-align: middle;
+  transition: box-shadow 0.2s;
 }
 
 .header #ooricLogoLink {
@@ -342,8 +342,8 @@ a:hover {
 }
 
 .header #ooricLogoLink:hover #ooricLogo {
-  border: 4px solid #fbc02d;
-  box-sizing: border-box;
+  outline: 4px solid #FFD700; 
+  outline-offset: -4px;
 }
 
 /* Menu Icon */
@@ -448,7 +448,7 @@ a:hover {
 
   .menu a:hover {
     background-color: transparent;
-    color: #fbc02d;
+    color: #FFD700;
     font-weight: bolder;
     text-underline-offset: 8px;
   }
@@ -469,14 +469,14 @@ a:hover {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: linear-gradient(90deg, #878780 0%, #3f5efb 100%);
+  background: linear-gradient(90deg, #878780 0%, #3f5EFB 100%);
   /*background-image: url(https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/AE0qprnW58U2k2WP/view-islands4-A856pX7yBRH5Oo8B.jpeg);*/
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #welcome-section p a {
-  color: #fff;
+  color: #FFF;
   margin: 0;
 }
 
@@ -490,7 +490,7 @@ a:hover {
 }
 
 #welcome-li a {
-  color: #fff;
+  color: #FFF;
   margin: 0;
 }
 
@@ -527,7 +527,7 @@ a:hover {
 .projects-section {
   text-align: center;
   padding: 10rem 2rem;
-  background: #eceff1;
+  background: #ECEFF1;
 }
 
 .projects-section-header {
@@ -591,7 +591,7 @@ a:hover {
   font-size: 2rem;
   text-align: center;
   padding: 2rem 0.5rem;
-  color: #fff;
+  color: #FFF;
   text-transform: uppercase;
 }
 
@@ -623,7 +623,7 @@ a:hover {
   max-width: 400px;
   /* Adjust the max-width as needed */
   margin: 0 auto;
-  background: #ad1457;
+  background: #AD1457;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 28px;
   transition: all 2s, transform 0.5s, box_shadow 0.5s;
@@ -643,7 +643,7 @@ a:hover {
   font-size: 2rem;
   text-align: center;
   padding: 2rem 0.5rem;
-  color: #fff;
+  color: #FFF;
   text-transform: uppercase;
 }
 
@@ -652,7 +652,7 @@ a:hover {
 }
 
 #contact-intro-phrase {
-  color: #fff;
+  color: #FFF;
   border: none;
 }
 
@@ -686,13 +686,13 @@ a:hover {
 
 .contact-details {
   font-size: 2.4rem;
-  text-shadow: 2px 2px 1px #1f1f1f;
+  text-shadow: 2px 2px 1px #1F1F1F;
   transition: transform 0.3s ease-out;
 }
 
 .contact-details:hover {
   transform: translateY(8px);
-  color: #fbc02d;
+  color: #FFD700;
 }
 
 @media (max-width: 768px) {
@@ -713,13 +713,13 @@ footer {
   display: flex;
   justify-content: center;
   padding: 2.2rem;
-  background: #0c344e;
-  border-top: 4px solid #bfc8ea;
+  background: #0C344E;
+  border-top: 4px solid #BFC8EA;
   min-height: 2rem;
 }
 
 #foot {
-  color: #fff;
+  color: #FFF;
   font-family: "Poppins", sans-serif;
 }
 
@@ -756,12 +756,12 @@ footer {
 
 #fot {
   margin-left: -0.1rem;
-  color: #ff9f5c;
+  color: #FF9F5C;
   font-family: "Poppins", sans-serif;
 }
 
 #fot:hover {
-  color: #fbc02d;
+  color: #FFD700;
 }
 
 #iframe-container {
@@ -791,32 +791,32 @@ i {
 .accolades,
 .contact-info-section {
   padding: 20px;
-  background-color: #f3f3f2;
+  background-color: #F3F3F2;
 }
 
 h3 {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
-  color: #4a4a43;
+  color: #4A4A43;
   text-align: center;
   padding-top: 5px;
 }
 
 h3 a {
-  -webkit-text-fill-color: #4a4a43;
+  -webkit-text-fill-color: #4A4A43;
   margin: 0;
 }
 
 #greetingId {
   margin-bottom: 20px;
-  -webkit-text-fill-color: #4a4a43;
+  -webkit-text-fill-color: #4A4A43;
 }
 
 #greetingId #youtube-header-link {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 72px;
-  -webkit-text-fill-color: #4a4a43;
+  -webkit-text-fill-color: #4A4A43;
   margin: 0;
 }
 
@@ -829,21 +829,21 @@ h3 a {
   flex: 1;
   padding-right: 20px;
   text-align: left;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 .paragraphs h2 {
   padding-right: 20px;
   text-align: left;
   font-family: "Libre Caslon Display", serif;
-  color: #4a4a43;
+  color: #4A4A43;
   font-size: 36px;
 }
 
 .paragraphs p {
   text-align: left;
   margin-bottom: 40px;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 .about-work .work .paragraphs p {
@@ -924,7 +924,7 @@ h3 a {
 /* Links */
 .links {
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
 
 .links .paragraphs {
@@ -938,7 +938,7 @@ h3 a {
   margin-right: 0em;
   font-family: "Libre Caslon Display", serif;
   font-weight: normal;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 .paragraphs a:hover {
@@ -1016,7 +1016,7 @@ h3 a {
 
 /* Education section */
 .education-section {
-  background-color: #f3f3f2;
+  background-color: #F3F3F2;
 }
 
 .education-section .content-container {
@@ -1054,14 +1054,14 @@ h3 a {
 .column-header {
   height: 100px;
   margin-bottom: 20px;
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
   padding: 10px 0;
 }
 
 .column-header h2 {
   font-size: 36px;
   text-align: center;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 .placeholder {
@@ -1080,7 +1080,7 @@ h3 a {
   margin-right: 10px;
   margin: 20px;
   padding: 10px;
-  background-color: #ebebeb;
+  background-color: #EBEBEB;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1098,7 +1098,7 @@ h3 a {
 .text-row p,
 a {
   font-size: 16px;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 /* Media query for mobile */
@@ -1167,12 +1167,12 @@ a {
 .testing,
 #uxdesign, #prototype-section {
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
 
 .uxd-section {
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
 }
 
 .testing .paragraphs, .ux .paragraphs {
@@ -1217,7 +1217,7 @@ a {
   display: inline;
   align-items: center;
   text-decoration: none;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 .method-tile a:hover {
@@ -1226,7 +1226,7 @@ a {
 
 #uxdesign .paragraphs {
   text-align: center;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 #uxdesign .list-container {
@@ -1317,7 +1317,7 @@ a {
 .clients-section {
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
 
 .client-row {
@@ -1340,7 +1340,8 @@ a {
 }
 
 .client-row a:hover > img {
-  border: 2px solid #fbc02d;
+  box-shadow: 0 0 0 4px #FFD700;
+  outline-offset: -4px;
 }
 
 
@@ -1390,7 +1391,7 @@ a {
   flex: 1;
   padding-right: 20px;
   text-align: center;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 .microsoft-list {
@@ -1434,13 +1435,13 @@ a {
   padding-right: 20px;
   text-align: left;
   font-family: "Libre Caslon Display", serif;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 #accolades p {
   text-align: left;
   margin-bottom: 40px;
-  color: #4a4a43;
+  color: #4A4A43;
 }
 
 /* Media query for mobile devices */
@@ -1487,7 +1488,7 @@ input[type="email"],
 input[type="tel"] {
   width: 100%;
   padding: 8px;
-  border: 2px solid #ccc;
+  border: 2px solid #CCC;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
@@ -1495,7 +1496,7 @@ input[type="tel"] {
 textarea {
   width: 100%;
   padding: 8px;
-  border: 2px solid #ccc;
+  border: 2px solid #CCC;
   margin-bottom: 10px;
   box-sizing: border-box;
   height: 200px;
@@ -1513,7 +1514,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 textarea:focus {
-  border-color: #ccc;
+  border-color: #CCC;
 }
 
 .error-message {
@@ -1529,8 +1530,8 @@ button[type="submit"] {
   max-width: 200px;
   margin: 20px auto;
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #007Bff;
+  color: #FFF;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1538,7 +1539,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #0056B3;
 }
 
 @media (max-width: 768px) {
