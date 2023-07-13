@@ -695,6 +695,10 @@ a:hover {
   color: #FFD700;
 }
 
+#linkedin-icon {
+  margin-left: 8px;
+}
+
 @media (max-width: 768px) {
   .contact-section {
     padding-top: 24px;
