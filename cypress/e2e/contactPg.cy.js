@@ -81,7 +81,7 @@ describe('Verify Contact page', () => {
     cy.get('.tile-container p').eq(2).contains('ooric@outlook.com');
     cy.get('.tile-container a').eq(0).should('have.attr', 'href').and('equals', 'mailto:ooric@outlook.com?subject=Ooric.com%20Message');
 
-    cy.get('.tile-container h3').eq(2).contains('My Linkedin');
+    cy.get('.tile-container h3').eq(2).contains('My LinkedIn');
     cy.get('#linkedin-icon').should('exist');
     cy.get('.tile-container p').eq(3).contains('https://www.linkedin.com/in/eric-waldbaum/');
     cy.get('.tile-container a').eq(1).should('have.attr', 'href').and('equals', 'https://www.linkedin.com/in/eric-waldbaum/');
