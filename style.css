@@ -579,7 +579,7 @@ a:hover {
 }
 
 .project-image {
-  height: calc(100% - 6.8rem);
+  height: 78%;
   width: 100%;
   object-fit: cover;
   border-top-right-radius: 28px;
@@ -965,6 +965,10 @@ h3 a {
   margin-right: 10px;
   padding-right: 10px;
   box-sizing: border-box;
+}
+
+.link-tile i {
+  color: #4A4A43;
 }
 
 .link-tile .content {
@@ -1378,15 +1382,6 @@ a {
     width: 100%; /* Increase the width to make the image larger */
     max-width: none;
   }
-}
-
-/* About Amazon */
-.client-row img#kindleLogo {
-  height: auto;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  width: 300px;
-  height: 300px;
 }
 
 /* About Microsoft */
