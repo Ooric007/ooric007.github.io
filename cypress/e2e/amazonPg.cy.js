@@ -62,7 +62,7 @@ describe('Verify Amazon page', () => {
     cy.get('.clients-section h3').contains('TESTED');
     
     // verify images
-    cy.get('img[alt="Kindle logo"]').should('have.attr', 'src').and('include', 'kindlelogo-mv0xjJg01EHny9yr.png');
+    cy.get('img[alt="Kindle logo"]').should('have.attr', 'src').and('include', 'KindleLogo.png');
     cy.get('#kindleStoreLink').should('have.attr', 'href').and('equals', 'https://www.amazon.com/Kindle-Store/b?ie=UTF8&node=133140011');
   })
 
@@ -81,13 +81,13 @@ describe('Verify Amazon page', () => {
       .should('have.css', 'font-family', 'Raleway, sans-serif');
 
     // verify Deloitte Digital tile
-    cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'ddlogo-ALpXJP39BDtG9J5o.jpg');
+    cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'DDlogo.jpg');
     cy.get('.project-title').should('have.css', 'font-family', 'Poppins, sans-serif') // verify project font
     cy.contains('Deloitte Digital');
     cy.get('#projects a').eq(0).should('have.attr', 'href').and('equals', 'deloitte.html');
 
     // verify Microsoft tile
-    cy.get('img.project-image').eq(1).should('have.attr', 'src').and('include', 'officeformac2011-m7VEpb6OPXF5P1kE.jpg');
+    cy.get('img.project-image').eq(1).should('have.attr', 'src').and('include', 'OfficeForMac2011.jpg');
     cy.contains('Microsoft');
     cy.get('#projects a').eq(1).should('have.attr', 'href').and('equals', 'microsoft.html');
   })
@@ -110,14 +110,14 @@ describe('Verify Amazon page', () => {
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
     cy.switchToIframe('#contactSection').within(() => {
-      cy.get('img.project-image').should('have.attr', 'src').and('include', '_mg_2037-Y4LE4vwGMPUonDj7.jpg');
+      cy.get('img.project-image').should('have.attr', 'src').and('include', 'ooricContactPic.jpg');
     })
     cy.switchToIframe('#contactSection').contains('Contact Eric');
   })
 
   it('Verify the Footer section text', () => {
     // get content within Footer section iframe
-    cy.switchToIframe('#footerSection').contains('© 2023, Made with ♥ by Eric Waldbaum');
+    cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
         .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white

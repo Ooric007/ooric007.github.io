@@ -85,7 +85,7 @@ describe('Verify Roles page', () => {
     cy.get('.links p').eq(3).contains('I call this site an oldie, but goodie. It\'s great because it\'s a customizable page including news, stocks, fantasy sports, and email.');
 
     // verify image
-    cy.get('img[alt="Leaf"]').should('have.attr', 'src').and('include', 'icon-YD0gr4gWJWt5o2qr.svg');
+    cy.get('i').should('have.attr', 'class').and('include', 'fa-link');
   })
 
   it('Verify the Education section', () => {
@@ -93,7 +93,7 @@ describe('Verify Roles page', () => {
     cy.get('.education-section h1').contains('Continuously learning');
 
     // verify image
-    cy.get('img[alt="Drawing of Eric at work"]').should('have.attr', 'src').and('include', 'eric-characture-AQEXJW4el7i30DzB.PNG');
+    cy.get('img[alt="Drawing of Eric at work"]').should('have.attr', 'src').and('include', 'ooricCharacture.png');
 
     cy.get('.education-section h2').eq(0).contains('Education');
     cy.get('.education-section h2').eq(1).contains('Work');
@@ -188,14 +188,14 @@ describe('Verify Roles page', () => {
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
     cy.switchToIframe('#contactSection').within(() => {
-      cy.get('img.project-image').should('have.attr', 'src').and('include', '_mg_2037-Y4LE4vwGMPUonDj7.jpg');
+      cy.get('img.project-image').should('have.attr', 'src').and('include', 'ooricContactPic.jpg');
     })
     cy.switchToIframe('#contactSection').contains('Contact Eric');
   })
 
   it('Verify the Footer section text', () => {
     // get content within Footer section iframe
-    cy.switchToIframe('#footerSection').contains('© 2023, Made with ♥ by Eric Waldbaum');
+    cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
         .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white

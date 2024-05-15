@@ -69,7 +69,7 @@ describe('Verify Roles page', () => {
     cy.get('#test-methods h1').contains('My testing');
 
     // verify image
-    cy.get('img[alt="Leaf"]').should('have.attr', 'src').and('include', 'icon-YD0gr4gWJWt5o2qr.svg');
+    cy.get('img[alt="testing_method"]').should('have.attr', 'src').and('include', 'software-testing.jpg');
     
     cy.get('.method-tile h2').eq(0).contains('Automation');
     cy.get('.method-tile p').eq(0).contains('I specialize in UI automation on iOS (Swift), Android (Kotlin), Web (JavaScript, Python, C#) and API automation (C#, JavaScript). Tools include Xcode, Android Studio, Visual Studio Code, and Postman.');
@@ -158,6 +158,9 @@ describe('Verify Roles page', () => {
   it('Verify the UXD methods section', () => {
     cy.get('#uxd-methods h3').contains('METHODS');
     cy.get('#uxd-methods h1').contains('My UX coursework');
+
+    // verify image
+    cy.get('img[alt="ux_method"]').should('have.attr', 'src').and('include', 'ux-method.png');
 
     cy.get('#uxd-methods h2').eq(0).contains('Problem Statement');
     cy.get('#uxd-methods p').eq(0).contains('When initiating a new project, it is important to comprehend the (potential) problem(s) that the team intends to address for the end user. By harnessing the power of both data and intuition, I am able to acquire a comprehensive understanding of the user challenges and devise impactful solutions that effectively cater to their needs.');
@@ -258,14 +261,14 @@ describe('Verify Roles page', () => {
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
     cy.switchToIframe('#contactSection').within(() => {
-      cy.get('img.project-image').should('have.attr', 'src').and('include', '_mg_2037-Y4LE4vwGMPUonDj7.jpg');
+      cy.get('img.project-image').should('have.attr', 'src').and('include', 'ooricContactPic.jpg');
     })
     cy.switchToIframe('#contactSection').contains('Contact Eric');
   })
 
   it('Verify the Footer section text', () => {
     // get content within Footer section iframe
-    cy.switchToIframe('#footerSection').contains('© 2023, Made with ♥ by Eric Waldbaum');
+    cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
         .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white

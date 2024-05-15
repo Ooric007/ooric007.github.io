@@ -66,16 +66,16 @@ describe('Verify Deloitte Digital page', () => {
     cy.get('.clients-section h3').contains('TESTED');
     
     // verify images
-    cy.get('img[alt="Office for Mac 2016 logo"]').should('have.attr', 'src').and('include', 'officeformac2016-mxBxrb2byXh3nLKK.jpeg');
+    cy.get('img[alt="Office for Mac 2016 logo"]').should('have.attr', 'src').and('include', 'OfficeForMac2016.jpg');
 
-    cy.get('img[alt="Office for Mac 2011 logo"]').should('have.attr', 'src').and('include', 'officeformac2011-m7VEpb6OPXF5P1kE.jpg');
+    cy.get('img[alt="Office for Mac 2011 logo"]').should('have.attr', 'src').and('include', 'OfficeForMac2011.jpg');
     cy.get('#MacOffice2011-link').should('have.attr', 'href').and('equals', 'https://youtu.be/FGLye1dn6dg');
  
-    cy.get('img[alt="Office for Mac 2008 logo"]').should('have.attr', 'src').and('include', 'officeformac2008-dOqXbpZplzFZVjJP.png');
-    cy.get('img[alt="Windows Live Spaces logo"]').should('have.attr', 'src').and('include', 'windowslivespaceslogo-mk3LDG44bBTjE2M7.jpeg');
-    cy.get('img[alt="Windows Vista logo"]').should('have.attr', 'src').and('include', 'vistalogo-mv0xjbPbajIawVll.jpeg');
+    cy.get('img[alt="Office for Mac 2008 logo"]').should('have.attr', 'src').and('include', 'OfficeForMac2008.png');
+    cy.get('img[alt="Windows Live Spaces logo"]').should('have.attr', 'src').and('include', 'WindowsLiveSpacesLogo.jpeg');
+    cy.get('img[alt="Windows Vista logo"]').should('have.attr', 'src').and('include', 'VistaLogo.jpeg');
 
-    cy.get('img[alt="Internet Explorer 7 logo"]').should('have.attr', 'src').and('include', 'ie7logo-AQEXJWeWz7TDXwbV.jpeg');
+    cy.get('img[alt="Internet Explorer 7 logo"]').should('have.attr', 'src').and('include', 'ie7logo.jpeg');
   })
 
   it('Verify the Accolades section', () => {
@@ -97,13 +97,13 @@ describe('Verify Deloitte Digital page', () => {
       .should('have.css', 'font-family', 'Raleway, sans-serif');
 
     // verify Deloitte Digital tile
-    cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'ddlogo-ALpXJP39BDtG9J5o.jpg');
+    cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'DDlogo.jpg');
     cy.get('.project-title').should('have.css', 'font-family', 'Poppins, sans-serif') // verify project font
     cy.contains('Deloitte Digital');
     cy.get('#projects a').eq(0).should('have.attr', 'href').and('equals', 'deloitte.html');
 
     // verify Amazon tile
-    cy.get('img.project-image').eq(1).should('have.attr', 'src').and('include', 'kindlelogo-mv0xjJg01EHny9yr.png');
+    cy.get('img.project-image').eq(1).should('have.attr', 'src').and('include', 'KindleLogo.png');
     cy.contains('Amazon');
     cy.get('a.project').eq(1).should('have.attr', 'href').and('equals', 'amazon.html');
   })
@@ -126,14 +126,14 @@ describe('Verify Deloitte Digital page', () => {
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
     cy.switchToIframe('#contactSection').within(() => {
-      cy.get('img.project-image').should('have.attr', 'src').and('include', '_mg_2037-Y4LE4vwGMPUonDj7.jpg');
+      cy.get('img.project-image').should('have.attr', 'src').and('include', 'ooricContactPic.jpg');
     })
     cy.switchToIframe('#contactSection').contains('Contact Eric');
   })
 
   it('Verify the Footer section text', () => {
     // get content within Footer section iframe
-    cy.switchToIframe('#footerSection').contains('© 2023, Made with ♥ by Eric Waldbaum');
+    cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
         .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white

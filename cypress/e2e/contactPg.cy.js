@@ -228,7 +228,7 @@ describe('Verify Contact page', () => {
 
   it('Verify the Footer section text', () => {
     // get content within Footer section iframe
-    cy.switchToIframe('#footerSection').contains('© 2023, Made with ♥ by Eric Waldbaum');
+    cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
         .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white

@@ -83,18 +83,18 @@ describe('Verify Home Page work history section', () => {
       .should('have.css', 'font-family', 'Raleway, sans-serif');
 
     // verify Deloitte Digital tile
-    cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'ddlogo-ALpXJP39BDtG9J5o.jpg');
+    cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'DDlogo.jpg');
     cy.get('.project-title').should('have.css', 'font-family', 'Poppins, sans-serif') // verify project font
     cy.contains('Deloitte Digital');
     cy.get('a.project-tile').eq(0).should('have.attr', 'href').and('equals', 'pages/deloitte.html');
 
     // verify Amazon tile
-    cy.get('img.project-image').eq(1).should('have.attr', 'src').and('include', 'kindlelogo-mv0xjJg01EHny9yr.png');
+    cy.get('img.project-image').eq(1).should('have.attr', 'src').and('include', 'KindleLogo.png');
     cy.contains('Amazon');
     cy.get('a.project-tile').eq(1).should('have.attr', 'href').and('equals', 'pages/amazon.html');
 
     // verify Microsoft tile
-    cy.get('img.project-image').eq(2).should('have.attr', 'src').and('include', 'officeformac2011-m7VEpb6OPXF5P1kE.jpg');
+    cy.get('img.project-image').eq(2).should('have.attr', 'src').and('include', 'OfficeForMac2011.jpg');
     cy.contains('Microsoft');
     cy.get('a.project-tile').eq(2).should('have.attr', 'href').and('equals', 'pages/microsoft.html');
   })
@@ -121,7 +121,7 @@ describe('Verify Contact section', () => {
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
     cy.switchToIframe('#contactSection').within(() => {
-      cy.get('img.project-image').should('have.attr', 'src').and('include', '_mg_2037-Y4LE4vwGMPUonDj7.jpg');
+      cy.get('img.project-image').should('have.attr', 'src').and('include', 'ooricContactPic.jpg');
     })
     cy.switchToIframe('#contactSection').contains('Contact Eric');
   })
@@ -132,7 +132,7 @@ describe('Verify Footer section', () => {
     cy.visit('http://127.0.0.1:5500/index.html');
 
     // get content within Footer section iframe
-    cy.switchToIframe('#footerSection').contains('© 2023, Made with ♥ by Eric Waldbaum');
+    cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
         .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white

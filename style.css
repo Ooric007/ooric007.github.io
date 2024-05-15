@@ -1161,6 +1161,11 @@ a {
   .column:nth-child(3) .column-header {
     display: none;
   }
+
+  .contact-tile {
+    height: 76%;
+    margin-bottom: 100px;
+  }
 }
 
 /* Roles */

@@ -71,34 +71,34 @@ describe('Verify Deloitte Digital page', () => {
     .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
 
     // verify images
-    cy.get('img[alt="Costco logo"]').should('have.attr', 'src').and('include', 'costcologo-AwvLrb8bQKtD1aOR.png');
+    cy.get('img[alt="Costco logo"]').should('have.attr', 'src').and('include', 'CostcoLogo.png');
     cy.get('#costcoLink').should('have.attr', 'href').and('equals', 'https://www.costco.com/join-costco.html');
 
-    cy.get('img[alt="The VOID logo"]').should('have.attr', 'src').and('include', 'thevoid-Yyvko4DD83S6x4pg.png');
+    cy.get('img[alt="The VOID logo"]').should('have.attr', 'src').and('include', 'TheVOID.png');
     cy.get('#theVOIDlink').should('have.attr', 'href').and('equals', 'https://web.archive.org/web/20191218041742/https://www.thevoid.com/');
  
-    cy.get('img[alt="Showtime logo"]').should('have.attr', 'src').and('include', 'showtimelogo-AoPEeb44XgskK3jk.png');
-    cy.get('#SHOanytimeLink').should('have.attr', 'href').and('equals', 'https://apps.apple.com/us/app/showtime-anytime/id484232467');
+    cy.get('img[alt="Showtime logo"]').should('have.attr', 'src').and('include', 'ShowtimeLogo.png');
+    cy.get('#SHOanytimeLink').should('have.attr', 'href').and('equals', 'https://web.archive.org/web/20170927182724/http://www.deloittedigital.com/us/work/case_study/showtime');
 
-    cy.get('img[alt="Lululemon logo"]').should('have.attr', 'src').and('include', 'lululemonlogo-mP4XpW33V7IeW7OR.png');
+    cy.get('img[alt="Lululemon logo"]').should('have.attr', 'src').and('include', 'lululemonLogo.png');
     cy.get('#lululemonLink').should('have.attr', 'href').and('equals', 'https://www.lululemon.com/');
 
-    cy.get('img[alt="HP logo"]').should('have.attr', 'src').and('include', 'hplogo-m2Wb49qqR2iEQ8bv.png');
+    cy.get('img[alt="HP logo"]').should('have.attr', 'src').and('include', 'HPlogo.png');
     cy.get('#hpSupportLink').should('have.attr', 'href').and('equals', 'https://support.hp.com/');
 
-    cy.get('img[alt="Rent-A-Center logo"]').should('have.attr', 'src').and('include', 'raclogo-Y4LE49PP13cGJl8l.jpeg');
+    cy.get('img[alt="Rent-A-Center logo"]').should('have.attr', 'src').and('include', 'racLogo.jpeg');
     cy.get('#rentACenterLink').should('have.attr', 'href').and('equals', 'https://www.rentacenter.com/');
 
-    cy.get('img[alt="SuperCuts logo"]').should('have.attr', 'src').and('include', 'supercutslogo-Yyvko4DDRpc3J2Jp.png');
+    cy.get('img[alt="SuperCuts logo"]').should('have.attr', 'src').and('include', 'superCutsLogo.png');
     cy.get('#superCutsLink').should('have.attr', 'href').and('equals', 'https://apps.apple.com/us/app/supercuts-hair-salon-check-in/id529129647');
 
-    cy.get('img[alt="Commonwealth of Pennsylvania CareerLink logo"]').should('have.attr', 'src').and('include', 'pajobgateway-mxBxrb22POseG9RP.png');
+    cy.get('img[alt="Commonwealth of Pennsylvania CareerLink logo"]').should('have.attr', 'src').and('include', 'PAjobgateway.png');
     cy.get('#jobGatewayLink').should('have.attr', 'href').and('equals', 'https://web.archive.org/web/20161124013605/https://www.jobgateway.pa.gov/jponline/Admin/Common/Portal.aspx');
 
     cy.get('img[alt="Deloitte Digital logo"]').should('have.attr', 'src').and('include', 'DDlogo.png');
     cy.get('#ddLink').should('have.attr', 'href').and('equals', 'https://web.archive.org/web/20141006164150/http://www.deloittedigital.com/us');
 
-    cy.get('img[alt="truTV logo"]').should('have.attr', 'src').and('include', 'trutvlogo-Yan2BQ00Ryi1e4Wq.png');
+    cy.get('img[alt="truTV logo"]').should('have.attr', 'src').and('include', 'truTVlogo.png');
     cy.get('#truTVlink').should('have.attr', 'href').and('equals', 'https://apps.apple.com/us/app/trutv/id396972659');
   })
 
@@ -112,16 +112,16 @@ describe('Verify Deloitte Digital page', () => {
     cy.get('.accolades-section p').eq(3).contains('– Tina Y., Product Owner, Costco Wholesale');
 
     cy.get('.accolades-section q').eq(1).contains('Wow, just wow! [with two thumbs up after showing client demo]');
-    cy.get('.accolades-section p').eq(4).contains('– Guislain L., Solution Architect, Costco Wholesale');
+    cy.get('.accolades-section p').eq(4).contains('– Guislain L., Membership Solution Architect, Costco Wholesale');
 
     cy.get('.accolades-section q').eq(2).contains('You are an expert with everything! Thank you so much for helping me learn so much.');
-    cy.get('.accolades-section p').eq(5).contains('– Vianney L., Quality Engineer (current Automation Quality Engineer at GFT)');
+    cy.get('.accolades-section p').eq(5).contains('– Vianney L., Quality Engineer (current QA Automation Engineer at GFT)');
 
     cy.get('.accolades-section q').eq(3).contains('Eric is the most diligent QA I\'ve ever worked with. You\'re in good hands [with him]');
-    cy.get('.accolades-section p').eq(6).contains('– Ashley P., Associate Creative Director (current UX Director at Celerity)');
+    cy.get('.accolades-section p').eq(6).contains('– Ashley P., Associate Creative Director (current UX Director at Randstad Digital)');
 
     cy.get('.accolades-section q').eq(4).contains('I want it to be known, and will shout it from the uppermost rafters, that Eric Waldbaum has been a prominent leader on the project from Day 1. His level of ownership over the product, his attention to the most minute of detail, his rigor and standard, have made a HUGE impact on the quality of work we’ve delivered. I don’t often get a dedicated QA on my projects, but when I do, his name is the one I request. I remembered his work from HP back in the Fremont days, and his work on The VOID is stellar.');
-    cy.get('.accolades-section p').eq(7).contains('– Brian E., Front-end Design/Dev 🦄 (current Design Systems Manager, UX Engineer 🦄 at Cisco)');
+    cy.get('.accolades-section p').eq(7).contains('– Brian E., Front-end Design/Dev 🦄, Studio Lead (current UX Engineer, Design Systems 🦄 at Cisco)');
 
     cy.get('.accolades-section q').eq(5).contains('Eric is one of the most detailed oriented and engaged Quality Assurance professionals I have ever worked with! He is very passionate about ensuring a great experience is delivered to the customer.');
     cy.get('.accolades-section p').eq(8).contains('– Marc E., iOS Architect (current Sr. Software Engineer at Chewy)');
@@ -135,12 +135,12 @@ describe('Verify Deloitte Digital page', () => {
       .should('have.css', 'font-family', 'Raleway, sans-serif');
 
     // verify Amazon tile
-    cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'kindlelogo-mv0xjJg01EHny9yr.png');
+    cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'KindleLogo.png');
     cy.contains('Amazon');
     cy.get('a.project').eq(0).should('have.attr', 'href').and('equals', 'amazon.html');
 
     // verify Microsoft tile
-    cy.get('img.project-image').eq(1).should('have.attr', 'src').and('include', 'officeformac2011-m7VEpb6OPXF5P1kE.jpg');
+    cy.get('img.project-image').eq(1).should('have.attr', 'src').and('include', 'OfficeForMac2011.jpg');
     cy.contains('Microsoft');
     cy.get('a.project').eq(1).should('have.attr', 'href').and('equals', 'microsoft.html');
   })
@@ -163,14 +163,14 @@ describe('Verify Deloitte Digital page', () => {
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
     cy.switchToIframe('#contactSection').within(() => {
-      cy.get('img.project-image').should('have.attr', 'src').and('include', '_mg_2037-Y4LE4vwGMPUonDj7.jpg');
+      cy.get('img.project-image').should('have.attr', 'src').and('include', 'ooricContactPic.jpg');
     })
     cy.switchToIframe('#contactSection').contains('Contact Eric');
   })
 
   it('Verify the Footer section text', () => {
     // get content within Footer section iframe
-    cy.switchToIframe('#footerSection').contains('© 2023, Made with ♥ by Eric Waldbaum');
+    cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
         .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
