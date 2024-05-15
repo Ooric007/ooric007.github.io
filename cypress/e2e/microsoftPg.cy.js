@@ -66,7 +66,7 @@ describe('Verify Deloitte Digital page', () => {
     cy.get('.clients-section h3').contains('TESTED');
     
     // verify images
-    cy.get('img[alt="Office for Mac 2016 logo"]').should('have.attr', 'src').and('include', 'OfficeForMac2016.jpg');
+    cy.get('img[alt="Office for Mac 2016 logo"]').should('have.attr', 'src').and('include', 'OfficeForMac2016.jpeg');
 
     cy.get('img[alt="Office for Mac 2011 logo"]').should('have.attr', 'src').and('include', 'OfficeForMac2011.jpg');
     cy.get('#MacOffice2011-link').should('have.attr', 'href').and('equals', 'https://youtu.be/FGLye1dn6dg');
