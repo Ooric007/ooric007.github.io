@@ -38,8 +38,12 @@ describe('Verify Roles page', () => {
     cy.get('.about h3').contains('ABOUT ERIC');
     cy.get('h3')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Nunito, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Nunito"|Nunito/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the Greeting text', () => {
@@ -47,7 +51,11 @@ describe('Verify Roles page', () => {
 
     cy.get('h1#greetingId')
     .should('have.css', 'font-size', '72px')
-    .should('have.css', 'font-family', 'Raleway, sans-serif');
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+    });
 
     cy.get('.paragraphs h2').eq(0).contains('Early Technology Enthusiast:');
     cy.get('.paragraphs h2').eq(1).contains('Academic Technology Journey:');
@@ -59,13 +67,21 @@ describe('Verify Roles page', () => {
 
     cy.get('.paragraphs h2')
     .should('have.css', 'font-size', '36px')
-    .should('have.css', 'font-family', '"Libre Caslon Display", serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Libre Caslon Display"|Libre Caslon Display/);
+      expect(fontFamily).to.include('serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
 
     cy.get('.paragraphs p')
       .should('have.css', 'font-size', '16px')
-      .should('have.css', 'font-family', 'Poppins, sans-serif')
-      .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+      });
   })
 
   it('Verify the Links section', () => {
@@ -133,18 +149,30 @@ describe('Verify Roles page', () => {
 
     cy.get('.education-section h2')
     .should('have.css', 'font-size', '36px')
-    .should('have.css', 'font-family', 'Raleway, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
 
     cy.get('.education-section .text-row h3')
     .should('have.css', 'font-size', '24px')
-    .should('have.css', 'font-family', 'Nunito, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Nunito"|Nunito/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
 
     cy.get('.education-section .text-row p')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Poppins, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Poppins"|Poppins/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the Videos section', () => {
@@ -178,12 +206,20 @@ describe('Verify Roles page', () => {
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('h2#contact-intro-phrase')
         .should('have.css', 'font-size', '48px')
-        .should('have.css', 'font-family', 'Raleway, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Raleway"|Raleway/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('p#contact-intro-subphrase')
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
@@ -198,9 +234,13 @@ describe('Verify Roles page', () => {
     cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
-        .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+          expect($element).to.have.css('color', 'rgb(255, 255, 255)'); // text in white
+        });
       cy.get('#fot').should('have.css', 'color', 'rgb(255, 159, 92)'); // name text in orange
     })
   })

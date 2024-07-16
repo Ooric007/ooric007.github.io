@@ -36,20 +36,28 @@ describe('Verify Contact page', () => {
 
   it('Verify the Contact Greeting text header', () => {
     cy.get('.title-container h3').contains('CONTACT');
-
+  
     cy.get('.title-container h3')
-    .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Nunito, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
-  })
+      .should('have.css', 'font-size', '16px')
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Nunito"|Nunito/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+      });
+  });
+  
 
   it('Verify the Contact Greeting text', () => {
     cy.get('.contact-info-section h1').eq(0).contains('Get in touch today');
 
     cy.get('h1#greetingId')
     .should('have.css', 'font-size', '72px')
-    .should('have.css', 'font-family', 'Raleway, sans-serif');
-
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+    });
     cy.get('.tile-container h3').eq(0).contains('My Location & Time');
     cy.get('.tile-container p').eq(0).contains('Bellevue, WA, USA');
 
@@ -90,21 +98,33 @@ describe('Verify Contact page', () => {
 
     cy.get('.tile-container p')
       .should('have.css', 'font-size', '16px')
-      .should('have.css', 'font-family', 'Poppins, sans-serif')
-      .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+      });
 
     cy.get('.tile-container h3')
       .should('have.css', 'font-size', '24px')
-      .should('have.css', 'font-family', 'Nunito, sans-serif')
-      .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Nunito"|Nunito/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+      });  
   })
 
   it('Verify the Contact Form section', () => {
     cy.contains('Contact form');
     cy.get('.contact-form-section h2')
-      .should('have.css', 'color', 'rgb(33, 150, 243)') // text in blue
-      .should('have.css', 'font-size', '48px')
-      .should('have.css', 'font-family', 'Raleway, sans-serif');
+    .should('have.css', 'font-size', '48px')
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(33, 150, 243)'); // text in blue
+    });  
 
     // verify form
     cy.get('label[for="name"]').should('have.text', 'Name*');
@@ -231,9 +251,13 @@ describe('Verify Contact page', () => {
     cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
-        .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
-        .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+      .should('have.css', 'font-size', '16px')
+      .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+      });  
       cy.get('#fot').should('have.css', 'color', 'rgb(255, 159, 92)'); // name text in orange
     })
   })

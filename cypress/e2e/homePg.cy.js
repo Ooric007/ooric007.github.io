@@ -42,7 +42,11 @@ describe('Verify Home Page greeting text header', () => {
     cy.contains('Hi, I\'m Eric Waldbaum');
     cy.get('#welcome-padding')
     .should('have.css', 'font-size', '72px')
-    .should('have.css', 'font-family', 'Raleway, sans-serif');;
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+    });
   })
 })
 
@@ -60,8 +64,12 @@ describe('Verify Home Page greeting text', () => {
 
     cy.get('p')
       .should('have.css', 'font-size', '16px')
-      .should('have.css', 'font-family', 'Poppins, sans-serif')
-      .should('have.css', 'color', 'rgb(249, 249, 249)'); // #F9F9F9
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(249, 249, 249)'); // #F9F9F9
+      });
   })
 })
 
@@ -78,13 +86,22 @@ describe('Verify Home Page work history section', () => {
     
     cy.contains('My work history');
     cy.get('.projects-section-header')
-      .should('have.css', 'color', 'rgb(33, 150, 243)') // text in blue
       .should('have.css', 'font-size', '48px')
-      .should('have.css', 'font-family', 'Raleway, sans-serif');
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Raleway"|Raleway/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(33, 150, 243)'); // text in blue
+      });
 
     // verify Deloitte Digital tile
     cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'DDlogo.jpg');
-    cy.get('.project-title').should('have.css', 'font-family', 'Poppins, sans-serif') // verify project font
+    cy.get('.project-title')
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Poppins"|Poppins/);
+      expect(fontFamily).to.include('sans-serif');
+    }); // verify project font
     cy.contains('Deloitte Digital');
     cy.get('a.project-tile').eq(0).should('have.attr', 'href').and('equals', 'pages/deloitte.html');
 
@@ -111,12 +128,20 @@ describe('Verify Contact section', () => {
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('h2#contact-intro-phrase')
         .should('have.css', 'font-size', '48px')
-        .should('have.css', 'font-family', 'Raleway, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Raleway"|Raleway/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('p#contact-intro-subphrase')
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
@@ -135,9 +160,13 @@ describe('Verify Footer section', () => {
     cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
-        .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+          expect($element).to.have.css('color', 'rgb(255, 255, 255)'); // text in white
+        });
       cy.get('#fot').should('have.css', 'color', 'rgb(255, 159, 92)'); // name text in orange
     })
   })

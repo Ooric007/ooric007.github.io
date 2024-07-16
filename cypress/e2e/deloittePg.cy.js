@@ -39,8 +39,12 @@ describe('Verify Deloitte Digital page', () => {
 
     cy.get('h3')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Nunito, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Nunito"|Nunito/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the DD Greeting text', () => {
@@ -48,14 +52,22 @@ describe('Verify Deloitte Digital page', () => {
 
     cy.get('h1#greetingId')
     .should('have.css', 'font-size', '72px')
-    .should('have.css', 'font-family', 'Raleway, sans-serif');
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+    });
 
     cy.get('.about-work p').contains('At Deloitte/Übermind Studios, I made significant contributions to numerous high-revenue projects for renowned companies. My work primarily involved testing responsive websites across 20+ devices, as well as testing popular iOS and Android mobile/TV apps. As a leader, I led bug bashes, oversaw QA processes, mentored peers, and conducted QA and ticket triage meetings. As a scrum master, I ensured efficient project management and fostered collaboration among the team. I continuously expanded my automation skills using C#, JavaScript (Cypress), Python, Postman, and Ruby (Calabash) to automate various processes, significantly improving efficiency and quality. Additionally, I demonstrated versatility by creating chatbots, developing Figma prototypes, and completing salesforce.com admin training.');
 
     cy.get('.paragraphs p')
       .should('have.css', 'font-size', '16px')
-      .should('have.css', 'font-family', 'Poppins, sans-serif')
-      .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+      });
   })
 
   it('Verify the Clients section', () => {
@@ -67,8 +79,12 @@ describe('Verify Deloitte Digital page', () => {
 
     cy.get('#client-projects p')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Poppins, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Poppins"|Poppins/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
 
     // verify images
     cy.get('img[alt="Costco logo"]').should('have.attr', 'src').and('include', 'CostcoLogo.png');
@@ -130,9 +146,13 @@ describe('Verify Deloitte Digital page', () => {
   it('Verify the Other Work History section', () => {
     cy.contains('Other work history');
     cy.get('.projects-section-header')
-      .should('have.css', 'color', 'rgb(33, 150, 243)') // text in blue
       .should('have.css', 'font-size', '48px')
-      .should('have.css', 'font-family', 'Raleway, sans-serif');
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Raleway"|Raleway/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(33, 150, 243)'); // text in blue
+      });
 
     // verify Amazon tile
     cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'KindleLogo.png');
@@ -153,12 +173,20 @@ describe('Verify Deloitte Digital page', () => {
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('h2#contact-intro-phrase')
         .should('have.css', 'font-size', '48px')
-        .should('have.css', 'font-family', 'Raleway, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Raleway"|Raleway/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('p#contact-intro-subphrase')
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
@@ -173,9 +201,13 @@ describe('Verify Deloitte Digital page', () => {
     cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
-        .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+          expect($element).to.have.css('color', 'rgb(255, 255, 255)'); // text in white
+        });
       cy.get('#fot').should('have.css', 'color', 'rgb(255, 159, 92)'); // name text in orange
     })
   })

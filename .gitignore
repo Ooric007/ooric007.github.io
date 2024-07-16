@@ -1,5 +1,9 @@
 .DS_Store
+.cypress/
+.env
+*.log
 node_modules/
+cypress/downloads
 cypress/videos
 cypress/screenshots
 TestReport/

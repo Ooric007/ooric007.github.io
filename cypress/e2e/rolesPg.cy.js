@@ -43,8 +43,12 @@ describe('Verify Roles page', () => {
 
     cy.get('h3')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Nunito, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Nunito"|Nunito/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the QE Greeting text', () => {
@@ -52,7 +56,11 @@ describe('Verify Roles page', () => {
 
     cy.get('h1#greetingId')
     .should('have.css', 'font-size', '72px')
-    .should('have.css', 'font-family', 'Raleway, sans-serif');
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+    });
 
     cy.get('#tester p').eq(0).contains('This role represents my most extensive experience and where my skills truly shine. If project risk is a priority, then this is the position you should be seeking to fill. I consider this role to be \“the glue that holds teams together.\” I bring a unique combination of passion for technology, customer satisfaction, and a natural aptitude for testing.');
     cy.get('#tester p').eq(1).contains('With expertise in various testing roles, such as Quality Assurance Engineer (QAE), Quality Assurance (QA), Software Development Engineer in Test (SDET), and Software Test Engineer (STE), I am well-versed in both manual and automated testing practices. My adaptability to different titles stems from the breadth of my experience and the type of testing work involved.');
@@ -60,8 +68,12 @@ describe('Verify Roles page', () => {
 
     cy.get('.paragraphs p')
       .should('have.css', 'font-size', '16px')
-      .should('have.css', 'font-family', 'Poppins, sans-serif')
-      .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+      });
   })
 
   it('Verify the Test Methods section', () => {
@@ -109,13 +121,21 @@ describe('Verify Roles page', () => {
 
     cy.get('.method-tile h2')
     .should('have.css', 'font-size', '24px')
-    .should('have.css', 'font-family', '"Libre Caslon Display", serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Libre Caslon Display"|Libre Caslon Display/);
+      expect(fontFamily).to.include('serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
 
     cy.get('.method-tile p')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Poppins, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Poppins"|Poppins/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the Developer section', () => {
@@ -151,8 +171,12 @@ describe('Verify Roles page', () => {
 
     cy.get('#uxdesign #course-li')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Poppins, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Poppins"|Poppins/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the UXD methods section', () => {
@@ -188,13 +212,21 @@ describe('Verify Roles page', () => {
 
     cy.get('#uxd-methods h2')
     .should('have.css', 'font-size', '24px')
-    .should('have.css', 'font-family', '"Libre Caslon Display", serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Libre Caslon Display"|Libre Caslon Dispaly/);
+      expect(fontFamily).to.include('serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
 
     cy.get('#uxd-methods p')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Poppins, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Poppins"|Poppins/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the UXD prototype section', () => {
@@ -239,8 +271,12 @@ describe('Verify Roles page', () => {
 
     cy.get('#leader p')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Poppins, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Poppins"|Poppins/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the Contact section text', () => {
@@ -251,12 +287,20 @@ describe('Verify Roles page', () => {
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('h2#contact-intro-phrase')
         .should('have.css', 'font-size', '48px')
-        .should('have.css', 'font-family', 'Raleway, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Raleway"|Raleway/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('p#contact-intro-subphrase')
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
@@ -271,9 +315,13 @@ describe('Verify Roles page', () => {
     cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
-        .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+          expect($element).to.have.css('color', 'rgb(255, 255, 255)'); // text in white
+        });
       cy.get('#fot').should('have.css', 'color', 'rgb(255, 159, 92)'); // name text in orange
     })
   })

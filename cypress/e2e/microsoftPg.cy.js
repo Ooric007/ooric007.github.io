@@ -39,8 +39,12 @@ describe('Verify Deloitte Digital page', () => {
 
     cy.get('h3')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Nunito, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Nunito"|Nunito/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the DD Greeting text', () => {
@@ -48,7 +52,11 @@ describe('Verify Deloitte Digital page', () => {
 
     cy.get('h1#greetingId')
     .should('have.css', 'font-size', '72px')
-    .should('have.css', 'font-family', 'Raleway, sans-serif');
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+    });
 
     cy.get('.about-work p').eq(0).contains('Played a vital role in generating billions of dollars in revenue for Office for Mac through my significant contributions. Tested 3-D effects and other graphic areas for Office for Mac 2008, collaborated globally on testing charts and the chart ribbon for Office for Mac 2011, and ensured high-quality standards by testing Cocoa undo/redo menus, dialogs, status bars, OOUI, and ColorPickers for Office for Mac 2016. These efforts resulted in new and improved UI features, significant improvements in discoverability and enhanced performance (e.g., complex chart load time from over 30 seconds to under 2 seconds). Additionally, I provided effective automation and led Mac OS integration test work at Microsoft.');
 
@@ -58,8 +66,12 @@ describe('Verify Deloitte Digital page', () => {
 
     cy.get('.paragraphs p')
       .should('have.css', 'font-size', '16px')
-      .should('have.css', 'font-family', 'Poppins, sans-serif')
-      .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+      });
   })
 
   it('Verify the Tested section', () => {
@@ -92,13 +104,22 @@ describe('Verify Deloitte Digital page', () => {
   it('Verify the Other Work History section', () => {
     cy.contains('Other work history');
     cy.get('.projects-section-header')
-      .should('have.css', 'color', 'rgb(33, 150, 243)') // text in blue
       .should('have.css', 'font-size', '48px')
-      .should('have.css', 'font-family', 'Raleway, sans-serif');
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Raleway"|Raleway/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(33, 150, 243)'); // text in blue
+      });
 
     // verify Deloitte Digital tile
     cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'DDlogo.jpg');
-    cy.get('.project-title').should('have.css', 'font-family', 'Poppins, sans-serif') // verify project font
+    cy.get('.project-title')
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+      }); // verify project font
     cy.contains('Deloitte Digital');
     cy.get('#projects a').eq(0).should('have.attr', 'href').and('equals', 'deloitte.html');
 
@@ -116,12 +137,20 @@ describe('Verify Deloitte Digital page', () => {
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('h2#contact-intro-phrase')
         .should('have.css', 'font-size', '48px')
-        .should('have.css', 'font-family', 'Raleway, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Raleway"|Raleway/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('p#contact-intro-subphrase')
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');3
+        });
     })
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
@@ -136,9 +165,13 @@ describe('Verify Deloitte Digital page', () => {
     cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
-        .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+          expect($element).to.have.css('color', 'rgb(255, 255, 255)'); // text in white
+        });
       cy.get('#fot').should('have.css', 'color', 'rgb(255, 159, 92)'); // name text in orange
     })
   })

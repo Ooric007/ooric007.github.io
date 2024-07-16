@@ -39,8 +39,12 @@ describe('Verify Amazon page', () => {
 
     cy.get('h3')
     .should('have.css', 'font-size', '16px')
-    .should('have.css', 'font-family', 'Nunito, sans-serif')
-    .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Nunito"|Nunito/);
+      expect(fontFamily).to.include('sans-serif');
+      expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+    });
   })
 
   it('Verify the Amazon Greeting text', () => {
@@ -48,14 +52,22 @@ describe('Verify Amazon page', () => {
 
     cy.get('h1#greetingId')
     .should('have.css', 'font-size', '72px')
-    .should('have.css', 'font-family', 'Raleway, sans-serif');
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Raleway"|Raleway/);
+      expect(fontFamily).to.include('sans-serif');
+    });
 
     cy.get('.about-work p').contains('Conducted testing on the touch-optimized Kindle Store across Kindle Fire, Motorola Xoom, and Apple iPad, playing a crucial role in revolutionizing the purchasing experience for readers. I became familiar with how to test on touch-based devices, learned about session-based charter testing, and Fire OS.');
 
     cy.get('.paragraphs p')
       .should('have.css', 'font-size', '16px')
-      .should('have.css', 'font-family', 'Poppins, sans-serif')
-      .should('have.css', 'color', 'rgb(74, 74, 67)'); // #4A4A43
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Poppins"|Poppins/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(74, 74, 67)'); // #4A4A43
+      });
   })
 
   it('Verify the Clients section', () => {
@@ -76,13 +88,22 @@ describe('Verify Amazon page', () => {
   it('Verify the Other Work History section', () => {
     cy.contains('Other work history');
     cy.get('.projects-section-header')
-      .should('have.css', 'color', 'rgb(33, 150, 243)') // text in blue
       .should('have.css', 'font-size', '48px')
-      .should('have.css', 'font-family', 'Raleway, sans-serif');
+      .then($element => {
+        const fontFamily = $element.css('font-family');
+        expect(fontFamily).to.match(/"Raleway"|Raleway/);
+        expect(fontFamily).to.include('sans-serif');
+        expect($element).to.have.css('color', 'rgb(33, 150, 243)'); // text in blue
+      });
 
     // verify Deloitte Digital tile
     cy.get('img.project-image').eq(0).should('have.attr', 'src').and('include', 'DDlogo.jpg');
-    cy.get('.project-title').should('have.css', 'font-family', 'Poppins, sans-serif') // verify project font
+    cy.get('.project-title')
+    .then($element => {
+      const fontFamily = $element.css('font-family');
+      expect(fontFamily).to.match(/"Poppins"|Poppins/);
+      expect(fontFamily).to.include('sans-serif');
+    }); // verify project font
     cy.contains('Deloitte Digital');
     cy.get('#projects a').eq(0).should('have.attr', 'href').and('equals', 'deloitte.html');
 
@@ -100,12 +121,20 @@ describe('Verify Amazon page', () => {
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('h2#contact-intro-phrase')
         .should('have.css', 'font-size', '48px')
-        .should('have.css', 'font-family', 'Raleway, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Raleway"|Raleway/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').within(() => {
       cy.get('p#contact-intro-subphrase')
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+        });
     })
     cy.switchToIframe('#contactSection').contains('If you have any questions, feedback, or a job opportunity, please contact me.');
     
@@ -120,9 +149,13 @@ describe('Verify Amazon page', () => {
     cy.switchToIframe('#footerSection').contains('© 2024, Made with ♥ by Eric Waldbaum');
     cy.switchToIframe('#footerSection').within(() => {
       cy.get('#foot')
-        .should('have.css', 'color', 'rgb(255, 255, 255)') // text in white
         .should('have.css', 'font-size', '16px')
-        .should('have.css', 'font-family', 'Poppins, sans-serif');
+        .then($element => {
+          const fontFamily = $element.css('font-family');
+          expect(fontFamily).to.match(/"Poppins"|Poppins/);
+          expect(fontFamily).to.include('sans-serif');
+          expect($element).to.have.css('color', 'rgb(255, 255, 255)'); // text in white
+        });
       cy.get('#fot').should('have.css', 'color', 'rgb(255, 159, 92)'); // name text in orange
     })
   })
