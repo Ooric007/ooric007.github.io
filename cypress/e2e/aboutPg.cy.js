@@ -126,26 +126,30 @@ describe('Verify Roles page', () => {
     cy.get('.education-section .text-row p').eq(4).contains('Bachelor\'s degree in Management Information Systems');
     cy.get('.education-section .text-row p').eq(5).contains('1999-2004');
 
-    cy.get('.education-section .text-row h3').eq(3).contains('Deloitte Digital');
-    cy.get('.education-section .text-row p').eq(6).contains('Quality Architect Lead / Sr. Quality Assurance Engineer, Engineering Department');
-    cy.get('.education-section .text-row p').eq(7).contains('2012-2023');
+    cy.get('.education-section .text-row h3').eq(3).contains('Apple, Inc. (TEKsystems)');
+    cy.get('.education-section .text-row p').eq(6).contains('Manager, Siri Department');
+    cy.get('.education-section .text-row p').eq(7).contains('2024-present');
 
-    cy.get('.education-section .text-row h3').eq(4).contains('Amazon.com (CoreStaff)');
-    cy.get('.education-section .text-row p').eq(8).contains('SDET II, Kindle Cross-Platform Team');
-    cy.get('.education-section .text-row p').eq(9).contains('2011-2012');
+    cy.get('.education-section .text-row h3').eq(4).contains('Deloitte Digital');
+    cy.get('.education-section .text-row p').eq(8).contains('Quality Architect Lead / Sr. Quality Assurance Engineer, Engineering Department');
+    cy.get('.education-section .text-row p').eq(9).contains('2012-2023');
 
-    cy.get('.education-section .text-row h3').eq(5).contains('Microsoft Corporation');
-    cy.get('.education-section .text-row p').eq(10).contains('SDET, Office for Mac Team (aka Mac Business Unit)');
-    cy.get('.education-section .text-row p').eq(11).contains('2006-2011');
+    cy.get('.education-section .text-row h3').eq(5).contains('Amazon.com (CoreStaff)');
+    cy.get('.education-section .text-row p').eq(10).contains('SDET II, Kindle Cross-Platform Team');
+    cy.get('.education-section .text-row p').eq(11).contains('2011-2012');
 
-    cy.get('.education-section .text-row h3').eq(6).contains('Microsoft Corporation (Volt)');
-    cy.get('.education-section .text-row p').eq(12).contains('STE I and III');
-    cy.get('.education-section .text-row p').eq(13).contains('Live Spaces, Windows Beta, and Internet Explorer Teams');
-    cy.get('.education-section .text-row p').eq(14).contains('2005-2006');
+    cy.get('.education-section .text-row h3').eq(6).contains('Microsoft Corporation');
+    cy.get('.education-section .text-row p').eq(12).contains('SDET, Office for Mac Team (aka Mac Business Unit)');
+    cy.get('.education-section .text-row p').eq(13).contains('2006-2011');
 
-    cy.get('.education-section .text-row h3').eq(7).contains('Apple, Inc.');
-    cy.get('.education-section .text-row p').eq(15).contains('iPod and Mac Specialist, Retail Team');
+    cy.get('.education-section .text-row h3').eq(7).contains('Microsoft Corporation (Volt)');
+    cy.get('.education-section .text-row p').eq(14).contains('STE I and III');
+    cy.get('.education-section .text-row p').eq(15).contains('Live Spaces, Windows Beta, and Internet Explorer Teams');
     cy.get('.education-section .text-row p').eq(16).contains('2005-2006');
+
+    cy.get('.education-section .text-row h3').eq(8).contains('Apple, Inc.');
+    cy.get('.education-section .text-row p').eq(17).contains('iPod and Mac Specialist, Retail Team');
+    cy.get('.education-section .text-row p').eq(18).contains('2005-2006');
 
     cy.get('.education-section h2')
     .should('have.css', 'font-size', '36px')
