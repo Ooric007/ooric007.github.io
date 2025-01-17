@@ -97,8 +97,8 @@ describe('Verify Roles page', () => {
     cy.get('.links h2').eq(2).contains('LinkedIn');
     cy.get('.links p').eq(2).contains('I follow industry-leading software testers here for tips and tricks. Also, this is a great place to connect with other professionals and seek employment.');
 
-    cy.get('.links h2').eq(3).contains('My Yahoo!');
-    cy.get('.links p').eq(3).contains('I call this site an oldie, but goodie. It\'s great because it\'s a customizable page including news, stocks, fantasy sports, and email.');
+    cy.get('.links h2').eq(3).contains('Yahoo! Fantasy Sports');
+    cy.get('.links p').eq(3).contains('I enjoy using data, intuition, and statistics to try to win playing a variety of fantasy sports. It can be educational and fun at the same time!');
 
     // verify image
     cy.get('i').should('have.attr', 'class').and('include', 'fa-link');
@@ -126,7 +126,7 @@ describe('Verify Roles page', () => {
     cy.get('.education-section .text-row p').eq(4).contains('Bachelor\'s degree in Management Information Systems');
     cy.get('.education-section .text-row p').eq(5).contains('1999-2004');
 
-    cy.get('.education-section .text-row h3').eq(3).contains('TEKsystems at Apple, Inc.');
+    cy.get('.education-section .text-row h3').eq(3).contains('TEKsystems at multi-trillion dollar company');
     cy.get('.education-section .text-row p').eq(6).contains('Manager (contractor)');
     cy.get('.education-section .text-row p').eq(7).contains('2024-present');
 
